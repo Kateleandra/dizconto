@@ -34,8 +34,6 @@
   <div id="resultado"></div>
 
   <script>
-    $.getJSON('http://freegeoip.net/json/?callback', function(data) { ip = data.ip; });
-
     $("#leadForm").submit(function(event) {
       event.preventDefault();
 
@@ -45,7 +43,7 @@
         "nome": $("#nome").val(),
         "email": $("#email").val(),
         "tipo": $("#tipoCliente").val(),
-        "ip": ip
+        "ip": "TODO: pegar o IP"
       };
       var url = "/app/lead/"
       var posting = $.post(url, lead);
