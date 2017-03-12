@@ -12,7 +12,7 @@
     <form action="/" id="leadForm">
         <div class="form-group">
             <label for="nome">Nome</label>
-            <input type="nome" class="form-control" name="nome" id="nome" placeholder="Nome Completo">
+            <input type="nome" class="form-control" id="nome" placeholder="Nome Completo">
         </div>
         <div class="form-group">
             <label for="email">Email</label>
@@ -36,8 +36,8 @@
         $("#leadForm").submit(function(event) {
             event.preventDefault();
 
-            var $form = $(this),
-                nome = $form.find("input[name='nome']").val();
+            var $form = $(this);
+            var nome = $("#nome").val();
 
             var lead = {
                 "nome": nome
