@@ -34,13 +34,12 @@
   <div id="resultado"></div>
 
   <script>
+    $.getJSON('http://freegeoip.net/json/?callback', function(data) { ip = data.ip; });
+
     $("#leadForm").submit(function(event) {
       event.preventDefault();
 
       var $form = $(this);
-
-      // TODO: Obter o IP do usuário
-      var ip = "192.0.0.1";
 
       var lead = {
         "nome": $("#nome").val(),
@@ -48,11 +47,9 @@
         "tipo": $("#tipoCliente").val(),
         "ip": ip
       };
-      var url = "http://127.0.0.1:1337/lead/"
+      var url = "http://104.236.104.207:1337/lead/"
       var posting = $.post(url, lead);
     });
   </script>
-
 </body>
-
 </html>
