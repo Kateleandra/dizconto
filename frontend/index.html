@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Formulário</title>
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+</head>
+
+<body>
+    <form action="/" id="leadForm">
+        <input type="text" name="nome" placeholder="Nome...">
+        <input type="submit" value="Enviar">
+    </form>
+
+    <div id="resultado"></div>
+
+    <script>
+        $("#leadForm").submit(function(event) {
+            event.preventDefault();
+
+            var $form = $(this),
+                nome = $form.find("input[name='nome']").val();
+
+            var lead = {
+                "nome": nome
+            };
+            var url = "http://127.0.0.1:1337/lead/"
+            var posting = $.post(url, lead);
+        });
+    </script>
+
+</body>
+</html>
