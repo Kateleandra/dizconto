@@ -10,8 +10,24 @@
 
 <body>
     <form action="/" id="leadForm">
-        <input type="text" name="nome" placeholder="Nome...">
-        <input type="submit" value="Enviar">
+        <div class="form-group">
+            <label for="nome">Nome</label>
+            <input type="nome" class="form-control" name="nome" id="nome" placeholder="Nome Completo">
+        </div>
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Use email comercial de preferência">
+            <small id="emailHelp" class="form-text text-muted">Não compartilhamos seu email.</small>
+        </div>
+        <div class="form-group">
+            <label for="tipocliente">Tipo de usuário</label>
+            <select class="form-control" id="tipocliente">
+              <option>Consumidor Pessoa Física</option>
+              <option>Cliente Corporativo</option>
+            </select>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Enviar</button>
     </form>
 
     <div id="resultado"></div>
