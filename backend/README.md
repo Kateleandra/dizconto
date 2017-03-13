@@ -1,3 +1,3 @@
-# backend
+# Backend
 
-a [Sails](http://sailsjs.org) application
+Uma API rest em nodeJS usando [Sails](http://sailsjs.org).
