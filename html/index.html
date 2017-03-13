@@ -1,53 +1,192 @@
-<!doctype html>
-<html lang="en">
-
+<!DOCTYPE html>
+<html lang="pt-br">
 <head>
-  <meta charset="utf-8">
-  <title>Formulário</title>
-  <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <title>Blog</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 
 <body>
-  <form action="/" id="leadForm">
-    <div class="form-group">
-      <label for="nome">Nome</label>
-      <input type="nome" class="form-control" id="nome" placeholder="Nome Completo">
+
+    <div class="row cabecalho">
+        <div class="logo col-md-6">Logo</div>
+        <div class="nome col-md-6">Dizconto</div>
     </div>
-    <div class="form-group">
-      <label for="email">Email</label>
-      <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Use email comercial de preferência">
-      <small id="emailHelp" class="form-text text-muted">Não compartilhamos seu email.</small>
+    <div class="row">
+        <h1><a href="index.html" style="text-decoration: none;" onclick="window.open('tela_cadastro.html', 'Pagina', 'status=no, toolbar=no, location=no, directories=no, resisable=no, scrollbars=yes, top=50, left=30, width=770, height=400');">Cadastre-se e receba seu dinheiro de volta!</a></h1>
     </div>
-    <div class="form-group">
-      <label for="tipocliente">Tipo de usuário</label>
-      <select class="form-control" id="tipoCliente">
-              <option>Consumidor Pessoa Física</option>
-              <option>Cliente Corporativo</option>
-            </select>
+    <div class="row">
+        <nav class="navbar navbar-inverse">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                      <span class="icon-bar"></span>
+                      <span class="icon-bar"></span>
+                      <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand">Dizconto</a>
+                </div>
+                <div class="collapse navbar-collapse" id="myNavbar">
+                    <ul class="nav navbar-nav">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="sobre.html">Sobre</a></li>
+                        <li><a href="desconto.html">Descontos Especiais</a></li>
+                        <li class="active"><a href="se_liga.html">Se liga</a></li>
+                        <li><a href="contatos.html">Contato</a></li>
+                        <li class="dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="categorias.html">Categorias <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">Categorias01</a></li>
+                                <li><a href="#">Categorias02</a></li>
+                            </ul>
+                        </li>
+                         <li><a href="index.html" onclick="window.open('tela_cadastro.html', 'Pagina', 'status=no, toolbar=no, location=no, directories=no, resisable=no, scrollbars=yes, top=50, left=30, width=770, height=400');">CADASTRE SUA LOJA</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
     </div>
 
-    <button type="submit" class="btn btn-primary">Enviar</button>
-  </form>
+    <div class="row">
+        <div class="col-md-12 div_postagens">
+            <h1>Ultimas postagens</h1>
+            <div class="">
+               <div class="col-md-4 ultimas_postagens">
+                  <div class="thumbnail">
+                    <img src="..." alt="...">
+                    <h1>Título</h1>
+                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro labore ab voluptatem. Ut obcaecati quasi ullam eaque deserunt itaque soluta, alias in voluptates adipisci nihil nostrum! Optio sapiente incidunt numquam.</p>
+              </div>
+                  <p><a href="#" class="btn btn-primary" role="button">Saiba mais</a></p>
+                </div>
+              </div>
+            </div>
+            </div>
+            <div class="">
+               <div class="col-md-4 ultimas_postagens">
+                  <div class="thumbnail">
+                    <img src="..." alt="...">
+                    <h1>Título</h1>
+                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro labore ab voluptatem. Ut obcaecati quasi ullam eaque deserunt itaque soluta, alias in voluptates adipisci nihil nostrum! Optio sapiente incidunt numquam.</p>
+              </div>
+                  <p><a href="#" class="btn btn-primary" role="button">Saiba mais</a></p>
+                </div>
+              </div>
+            </div>
+            </div>
+            <div class="col-md-4 ultimas_postagens">
+                  <div class="thumbnail">
+                    <img src="..." alt="...">
+                    <h1>Título</h1>
+                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro labore ab voluptatem. Ut obcaecati quasi ullam eaque deserunt itaque soluta, alias in voluptates adipisci nihil nostrum! Optio sapiente incidunt numquam.</p>
+                </div>
+                  <p><a href="#" class="btn btn-primary" role="button">Saiba mais</a></p>
+                </div>
+              </div>
+            </div>
 
-  <div id="resultado"></div>
+    <hr>
+    <div class="row">
+        <div class="col-md-12 div_postagens">
+            <div class="col-md-4 postagens">
+                <h1>Título</h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur sint mollitia placeat illo deserunt quo perspiciatis repudiandae, similique eligendi animi maiores doloribus aliquam asperiores vel nesciunt enim, adipisci dicta, minima.</p>
+            </div>
+            <div class="col-md-4 postagens">
+                <h1>Título</h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est omnis ea, quos rem dignissimos incidunt temporibus iure accusamus amet, voluptates, commodi culpa a. Ullam cupiditate sequi aliquid quidem. Cumque, perspiciatis.</p>
+            </div>
+            <div class="col-md-4 postagens">
+                <h1><a href="index.html" style="text-decoration: none;" onclick="window.open('tela_cadastro.html', 'Pagina', 'status=no, toolbar=no, location=no, directories=no, resisable=no, scrollbars=yes, top=50, left=30, width=770, height=400');">FAÇA SEU CADASTRO!</a></h1>
 
-  <script>
-    $("#leadForm").submit(function(event) {
-      event.preventDefault();
+            </div>
+    </div>
 
-      var $form = $(this);
-
-      var lead = {
-        "nome": $("#nome").val(),
-        "email": $("#email").val(),
-        "tipo": $("#tipoCliente").val(),
-        "ip": "TODO: pegar o IP"
-      };
-      var url = "/app/lead/"
-      var posting = $.post(url, lead);
-    });
-  </script>
+    <div class="row col-md-12">
+        <div class="col-md-4 postagens div_postagens">
+            <h1>Título</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur sint mollitia placeat illo deserunt quo perspiciatis repudiandae, similique eligendi animi maiores doloribus aliquam asperiores vel nesciunt enim, adipisci dicta, minima.</p>
+        </div>
+        <div class="col-md-4 postagens div_postagens">
+            <h1>Título</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est omnis ea, quos rem dignissimos incidunt temporibus iure accusamus amet, voluptates, commodi culpa a. Ullam cupiditate sequi aliquid quidem. Cumque, perspiciatis.</p>
+        </div>
+        <div class="col-md-4 div_postagens">
+                <ul class="nav">
+                    <li class="item_rede_social">
+                        <a href=""><img src="img/facebook.png" alt=""></a>
+                    </li>
+                    <li class="item_rede_social">
+                        <a href=""><img src="img/twitter.png" alt=""></a>
+                    </li>
+                    <li class="item_rede_social">
+                        <a href=""><img src="img/instagram.png" alt=""></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
 </body>
+<footer>
+    <div class="rodape">
+        <div id="se-liga-rodape" class="col-md-12">
+            <h1 class="text-center">SE LIGA</h1>
+            <h4 class="text-center">Assine nossa newsletter!</h4>
+            <div class="text-center">
+                <div>
+                    <p><input type="text" name="Nome" size="40" placeholder="Nome" /></p>
+                    <p><input type="text" name="Email" size="40" placeholder="Email" /></p>
+                </div>
+                <div>
+                    <button class="btn btn-primary btn-lg active" type="button" onclick="window.open('http://codigofonte.net', 'popUpCadastro', TOP=10, LEFT=10, WIDTH=770, HEIGHT=400');">Cadastre-se</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row col-md-12">
+        <div class="col-md-4 postagens div_postagens">
+            <img src="" alt="Logo" height="42" width="42">
+            <p>O Dizconto é um blog sensacional que vai te ajudar a economizar nas compras online e ganhar uma graninha de volta. Impossível? A gente mostra como!</p>
+        </div>
+        <div class="col-md-4 postagens div_postagens">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti laudantium quod aspernatur asperiores sequi aut amet natus esse similique iste nulla et atque modi, tenetur quia tempora nam animi distinctio!</p>
+        </div>
+        <div class="col-md-4 postagens div_postagens">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti laudantium quod aspernatur asperiores sequi aut amet natus esse similique iste nulla et atque modi, tenetur quia tempora nam animi distinctio!</p>
+        </div>
+    </div>
+</footer>
+
+<hr>
+
+<div class="row">
+  <div class="col-md-12">
+    <div class="col-md-4">
+      <h4>Podemos te ajudar:</h4>
+      <ul>
+        <p>O dinheiro de volta não apareceu no meu extrato</p>
+        <p>O dinheiro de volta está pendente no meu extrato</p>
+        <p>Meu dinheiro de volta foi cancelado</p>
+      </ul>
+    </div>
+    <div class="col-md-4">
+      <h4>Cashback</h4>
+        <p>Como funciona?</p>
+        <p>Lojas online</p>
+        <p>Indique e Ganhe</p>
+        <p>Lembrador</p>
+        <p>Super Cashback</p>
+    </div>
+    <div class="col-md-4">
+        <h4>Cadastre sua loja!</h4>
+        <p>Ofereça dinheiro de volta em sua loja ou e-commerce. Fidelize seus clientes e aumente suas vendas.</p>
+        <p>Nossos consultores entarão em contato com você!</p>
+    </div>
+  </div>
+</div>
+
 </html>
