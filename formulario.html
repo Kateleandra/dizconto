@@ -35,6 +35,7 @@
   <div id="resultado"></div>
 
   <script>
+
     $("#leadForm").submit(function(event) {
       event.preventDefault();
 
@@ -43,8 +44,7 @@
       var lead = {
         "nome": $("#nome").val(),
         "email": $("#email").val(),
-        "tipo": $("#tipoCliente").val(),
-        "ip": "TODO: pegar o IP"
+        "tipo": $("#tipoCliente").val()
       };
       var url = "/app/lead/"
       var posting = $.post(url, lead);
