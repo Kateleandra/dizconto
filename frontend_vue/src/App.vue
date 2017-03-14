@@ -1,9 +1,8 @@
 <template>
 <div>
     Hey!
-    {{ titulo }}
-    <div v-for="p of posts">
-        <h1> {{ p.titulo }} </h1>
+    <div v-for="p of postagens">
+        <h1 class="titulo"> {{ p.titulo }} </h1>
         <h2> {{ p.snippet }}</h2>
         <img :src='p.foto' />
     </div>
@@ -15,24 +14,26 @@ export default {
     name: 'app',
     data() {
         return {
-            titulo: 'meu Titulo',
-            posts: [{
-                    titulo: 'primeiro título',
-                    foto: 'http://dicasboaspracachorro.com.br/wp-content/uploads/2014/06/hotel-para-cachorro.jpeg',
-                    snippet: 'Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum '
-                },
-                {
-                    titulo: 'segundo título',
-                    foto: 'http://dicasboaspracachorro.com.br/wp-content/uploads/2014/06/hotel-para-cachorro.jpeg',
-                    snippet: 'segundo Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum '
-                }
-            ]
+            postagens: []
         }
+    },
+    created() {
+        // this.$http.get('https://www.dizconto.com.br/app/postagem')
+        //   .then(res => res.json())
+        //   .then(postagens => this.postagens = postagens, err => console.log(err));
+
+        this.$http.get('http://www.dizconto.com.br:1337/postagem')
+          .then(res => res.json())
+          .then(postagens => this.postagens = postagens, err => console.log(err));
     }
 }
 </script>
 
 <style>
+
+.titulo {
+  font-weight: bold;
+}
 #app {
     font-family: 'Avenir', Helvetica, Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
