@@ -1,23 +1,40 @@
-body {}
-
-#logo {}
-
-#nome {}
-
-.post-content {
-    top: 0;
-    left: 0;
-    position: absolute;
+body {
+    background-color:#282727;
 }
 
-.thumbnail {
-    position: relative;
+.navbar .navbar-nav {
+    display: inline-block;
+    float: none;
 }
 
-.cabecalho {
-    left: 100px;
-    padding-left: 150px;
+.navbar .navbar-collapse {
+    text-align: center;
+}
+
+.logo_centro{
+    width: 600px;
+    height: 100px;
+    margin-bottom: 100px;
+    margin-left: 150px;
+
+}
+
+.rede_social{
+
+    width: 30px;
+    height: 30px;
+    margin-top: 10px;
     display: flex;
+    float: right;
+}
+.cabecalho_redes{
+    background-color: #282727;
+}
+.cabecalho {
+    left: 120px;
+    padding-left: 200px;
+    display: flex;
+    background-color: #282727;
 }
 
 h1 {
@@ -72,5 +89,3 @@ hr {
     display: inline-block;
     cursor: pointer;
 }
-
-.div-cadastro {}
