@@ -4,6 +4,16 @@ body {}
 
 #nome {}
 
+.post-content {
+    top: 0;
+    left: 0;
+    position: absolute;
+}
+
+.thumbnail {
+    position: relative;
+}
+
 .cabecalho {
     left: 100px;
     padding-left: 150px;

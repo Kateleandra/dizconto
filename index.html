@@ -46,38 +46,60 @@
         </nav>
     </div>
 
+
     <div class="container">
         <div class="row">
+            <div class="col-md-offset-7 col-md-4" style="position:fixed">
+                <form action="/" id="leadFormTopo">
+                        <h2 class="text-center">SE LIGA</h2>
+                        <div class="text-center">
+                            <div>
+                                <p><label for="nomeTopo">Nome</label>
+                                    <input type="text" id="nomeTopo" name="nomeTopo" size="30" placeholder="Ex: José Silva" /></p>
+                                <p><label for="emailTopo">E-mail</label>
+                                    <input type="text" id="emailTopo" name="emailTopo" label="Email" size="30" placeholder="Ex: jose@gmail.com" /></p>
+                            </div>
+                            <div>
+                                <button class="btn btn-primary btn-md active" type="submit">Cadastre-se</button>
+                            </div>
+                    </div>
+                </form>
+                <script>
+                    $("#leadFormTopo").submit(function(event) {
+                        event.preventDefault();
+
+                        var $form = $(this);
+
+                        var lead = {
+                            "nome": $("#nomeTopo").val(),
+                            "email": $("#emailTopo").val(),
+                            "tipo": "b2c"
+                        };
+                        var url = "/app/lead/"
+                        var posting = $.post(url, lead);
+                    });
+                </script>
+            </div>
             <div class="col-md-4 ultimas_postagens">
                 <div class="thumbnail">
                     <img src="img/dinheiro.jpg" alt="...">
-                    <h1>Título</h1>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro labore ab voluptatem. Ut obcaecati quasi ullam eaque deserunt itaque soluta, alias in voluptates adipisci nihil nostrum! Optio sapiente incidunt numquam. <a href='#'>Continuar lendo...</a></p>
+                    <div class="post-content">
+                        <h1>Título</h1>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro labore ab voluptatem. Ut obcaecati quasi ullam eaque deserunt itaque soluta, alias in voluptates adipisci nihil nostrum! Optio sapiente incidunt numquam. <a href='#'>Continuar lendo...</a></p>
+                    </div>
                 </div>
             </div>
             <div class="col-md-4 ultimas_postagens">
                 <div class="thumbnail">
                     <img src="img/dinheiro.jpg" alt="...">
-                    <h1>Título</h1>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro labore ab voluptatem. Ut obcaecati quasi ullam eaque deserunt itaque soluta, alias in voluptates adipisci nihil nostrum! Optio sapiente incidunt numquam. <a href='#'>Continuar lendo...</a></p>
-                </div>
-            </div>
-            <div class="col-md-4 ultimas_postagens">
-                <div class="thumbnail">
-                    <img src="img/dinheiro.jpg" alt="...">
-                    <h1>Título</h1>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro labore ab voluptatem. Ut obcaecati quasi ullam eaque deserunt itaque soluta, alias in voluptates adipisci nihil nostrum! Optio sapiente incidunt numquam. <a href='#'>Continuar lendo...</a></p>
+                    <div class="post-content">
+                        <h1>Título</h1>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro labore ab voluptatem. Ut obcaecati quasi ullam eaque deserunt itaque soluta, alias in voluptates adipisci nihil nostrum! Optio sapiente incidunt numquam. <a href='#'>Continuar lendo...</a></p>
+                    </div>
                 </div>
             </div>
         </div>
         <div class="row">
-            <div class="col-md-4 ultimas_postagens">
-                <div class="thumbnail">
-                    <img src="img/dinheiro.jpg" alt="...">
-                    <h1>Título</h1>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro labore ab voluptatem. Ut obcaecati quasi ullam eaque deserunt itaque soluta, alias in voluptates adipisci nihil nostrum! Optio sapiente incidunt numquam. <a href='#'>Continuar lendo...</a></p>
-                </div>
-            </div>
             <div class="col-md-4 ultimas_postagens">
                 <div class="thumbnail">
                     <img src="img/dinheiro.jpg" alt="...">
@@ -103,34 +125,33 @@
                 <h1 class="text-center">SE LIGA</h1>
                 <div class="text-center">
                     <div>
-                        <p><label for="nome">Nome:</label>
+                        <p><label for="nome">Nome</label>
                             <input type="text" id="nome" name="nome" size="40" placeholder="Ex: José Silva" /></p>
-                        <p><label for="email">E-mail:</label>
+                        <p><label for="email">E-mail</label>
                             <input type="text" id="email" name="email" label="Email" size="40" placeholder="Ex: jose@gmail.com" /></p>
                     </div>
                     <div>
                         <button class="btn btn-primary btn-lg active" type="submit">Cadastre-se</button>
                     </div>
                 </div>
-
-                <script>
-                    $("#leadForm").submit(function(event) {
-                        event.preventDefault();
-
-                        var $form = $(this);
-
-                        var lead = {
-                            "nome": $("#nome").val(),
-                            "email": $("#email").val(),
-                            "tipo": "b2c"
-                        };
-                        var url = "/app/lead/"
-                        var posting = $.post(url, lead);
-                    });
-                </script>
             </div>
         </div>
     </form>
+    <script>
+        $("#leadForm").submit(function(event) {
+            event.preventDefault();
+
+            var $form = $(this);
+
+            var lead = {
+                "nome": $("#nome").val(),
+                "email": $("#email").val(),
+                "tipo": "b2c"
+            };
+            var url = "/app/lead/"
+            var posting = $.post(url, lead);
+        });
+    </script>
     <div class="row col-md-12">
         <div class="col-md-4 postagens div_postagens">
             <img src="" alt="Logo" height="42" width="42">
@@ -145,7 +166,6 @@
         </div>
     </div>
 </footer>
-
 <hr>
 
 </html>
