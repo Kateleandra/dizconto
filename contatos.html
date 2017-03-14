@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Dizconto</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+
+    <div class="row cabecalho_redes">
+        <div>
+            <div>
+                <img  class="rede_social" src="./img/fc.png" alt="facebook">
+            </div>
+            <div>
+                <img  class="rede_social" src="./img/ins.png" alt="instagram">
+            </div>
+            <div>
+                <img  class="rede_social" src="./img/tw.png" alt="twitter">
+            </div>
+        </div>
+    </div>
+    <div class="row cabecalho">
+        <div class="logo col-md-12"> <img class="logo_centro" src="./img/logo_centro.png" alt="logo DizConto"></div>
+    </div>
+    <div>
+        <nav class=" nav-pills navbar-collapse navbar navbar-inverse">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                      <span class="icon-bar"></span>
+                      <span class="icon-bar"></span>
+                      <span class="icon-bar"></span>
+                  </button>
+              </div>
+              <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="sobre.html">Sobre</a></li>
+                    <li><a href="index.html" onclick="window.open('lead-cliente.html', 'Pagina', 'status=no, toolbar=no, location=no, directories=no, resisable=no, scrollbars=yes, top=50, left=30, width=770, height=400');">SE LIGA!</a></li>
+                    <li><a href="contatos.html">Contato</a></li>
+                    <li><a href="index.html" onclick="window.open('lead-empresa.html', 'Pagina', 'status=no, toolbar=no, location=no, directories=no, resisable=no, scrollbars=yes, top=50, left=30, width=770, height=400');">CADASTRE SUA LOJA</a></li>
+                    <li><img class="rede_social" src="./img/lupa.png" alt=""></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</div>
+
+<div class="page-contato">
+    <h2><b>Fale com a gente!</b></h2>
+    <div>
+        <div>
+            <img  class="contatos-logo" src="./img/facebook.png" alt="facebook" align="left">
+            <p class="contatos-texto">dizcontoblog@gmail.com</p>
+        </div>
+        <div>
+            <img  class="contatos-logo" src="./img/facebook.png" alt="facebook" align="left">
+            <p class="contatos-texto">facebook.com/dizconto</p>
+        </div>
+    </div>    
+</div>
+</body>
+<footer>
+    <form class="se-liga-rodape" action="/" id="leadForm">
+        <div>
+            <div class="col-md-12">
+                <h1 class="chamada-newsletter">SE LIGA</h1>
+                <h5 class="chamada-newsletter">ASSINE NOSSA NEWSLETTER</h5>
+                <p class="texto-se-liga">Não fica dando bobeira! Cadastre-se que a gente te envia os melhores descontos da internet!</p>
+                <div class="text-center">
+                    <div>
+                        <input type="text" name="nome" id="nome" size="40" placeholder="Nome Completo" /></p>
+                        <input type="text" name="email" id="email" size="40" placeholder="E-mail" /></p>
+                    </div>
+                    <div>
+                        <button class="botao-cadastro" type="submit">PRONTO!</button>
+                    </div>
+                </div>
+                <script>
+                    $("#leadForm").submit(function(event) {
+                        event.preventDefault();
+
+                        var $form = $(this);
+
+                        var lead = {
+                            "nome": $("#nome").val(),
+                            "email": $("#email").val(),
+                            "tipo": "b2c"
+                        };
+                        var url = "/app/lead/"
+                        var posting = $.post(url, lead);
+                    });
+                </script>
+            </div>
+        </div>
+    </form>
+    <div class="feed-rodape">
+        <div class="col-md-4">
+            <h4 class="feed-title">Leonardo Oliveira - 21</h4>
+            <p class="feed-text">"Utilizar um sistema de cashback foi ótimo. Várias das lojas parceiras eram lojas nas quais eu já realizava compras, então ganhar um pouco do dinheiro de volta é sempre bom. Além disso, consegui alguns cupons de descontos muito bons, principalmente na compra de livros. É um sistema que vale a pena."</p>
+        </div>
+        <div class="col-md-4">
+            <h4 class="feed-title">Leonardo Oliveira - 21</h4>
+            <p class="feed-text">"Utilizar um sistema de cashback foi ótimo. Várias das lojas parceiras eram lojas nas quais eu já realizava compras, então ganhar um pouco do dinheiro de volta é sempre bom. Além disso, consegui alguns cupons de descontos muito bons, principalmente na compra de livros. É um sistema que vale a pena."</p>
+        </div>
+        <div class="col-md-4">
+            <h4 class="feed-title">Leonardo Oliveira - 21</h4>
+            <p class="feed-text">"Utilizar um sistema de cashback foi ótimo. Várias das lojas parceiras eram lojas nas quais eu já realizava compras, então ganhar um pouco do dinheiro de volta é sempre bom. Além disso, consegui alguns cupons de descontos muito bons, principalmente na compra de livros. É um sistema que vale a pena."</p>
+        </div>
+    </div>
+</footer>
+</html>
