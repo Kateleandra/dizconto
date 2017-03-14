@@ -178,3 +178,19 @@ hr {
     font-weight: bold;
     background: transparent url(../img/botao_cadastro.png) no-repeat center top;
 }
+
+.page-contato {
+    padding: 30px;
+}
+
+.contatos-logo {
+    width: 30px;
+    height: 30px;
+    float: left;
+    margin: 10px;
+}
+
+.contatos-texto {
+    margin: auto;
+    padding: 15px;
+}
