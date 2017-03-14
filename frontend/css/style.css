@@ -1,5 +1,5 @@
-body {
-    background-color:#282727;
+body { 
+    overflow-x: hidden;
 }
 
 .post-content {
@@ -35,17 +35,18 @@ body {
 
 }
 
-.rede_social{
-
+.rede_social {
     width: 30px;
     height: 30px;
     margin-top: 10px;
     display: flex;
     float: right;
 }
-.cabecalho_redes{
+
+.cabecalho_redes {
     background-color: #282727;
 }
+
 .cabecalho {
     left: 120px;
     padding-left: 200px;
@@ -74,7 +75,6 @@ hr {
 }
 
 .ultimas_postagens {
-    ;
     max-width: 350px;
     float: left;
     box-sizing: border-box;
@@ -121,13 +121,29 @@ hr {
     margin-bottom: 2px;
 }
 
-.se-liga-rodape {
+.se-liga {
     background-color: #ffc533;
     bottom: 0;
     width: 100%;
     text-align: center;
     display: table;
     padding-bottom: 15px;
+}
+
+.modal-header.se-liga-header {
+    background-color: #ffc533;
+    padding: 0;
+    border-bottom: none;
+}
+
+.modal-header.se-liga-header .close {
+    position: absolute;
+    right: 15px;
+    top: 15px;
+}
+
+.modal-body.se-liga {
+    padding-top: 0;
 }
 
 .feed-rodape {
@@ -193,4 +209,14 @@ hr {
 .contatos-texto {
     margin: auto;
     padding: 15px;
+}
+
+.item_rede_social {
+    display: flex;
+}
+
+.popup {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
 }
