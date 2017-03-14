@@ -1,21 +1,4 @@
-body {
-    background-color:#282727;
-}
-
-.post-content {
-    top: 0;
-    left: 0;
-    position: absolute;
-}
-
-.thumbnail {
-    position: relative;
-}
-
-.cabecalho {
-    left: 100px;
-    padding-left: 150px;
-    display: flex;
+body { overflow-x: hidden;
 }
 
 .navbar .navbar-nav {
@@ -29,9 +12,10 @@ body {
 
 .logo_centro{
     width: 600px;
-    height: 100px;
+    height: 600px;
     margin-bottom: 100px;
     margin-left: 150px;
+    align-self: center;
 
 }
 
@@ -96,59 +80,6 @@ hr {
     background-color: #d8d8d8;
 }
 
-
-.popup {
-    position: relative;
-    display: inline-block;
-    cursor: pointer;
-}
-
-.div_postagens {
-    margin: 20px;
-}
-
-.ultimas_postagens {
-    max-width: 350px;
-    float: left;
-    box-sizing: border-box;
-}
-
-.postagens {
-    border-style: solid;
-    border-width: 2px;
-    margin-left: 20px;
-    max-width: 350px;
-    margin-bottom: 2px;
-}
-
-.se-liga-rodape {
-    background-color: #ffc533;
-    bottom: 0;
-    width: 100%;
-    text-align: center;
-    display: table;
-    padding-bottom: 15px;
-}
-
-.feed-rodape {
-    background-color: #000000;
-    color: #fff;
-    bottom: 0;
-    width: 100%;
-    display: table;
-}
-
-.feed-text {
-    padding: 12px;
-    font-style: italic;
-}
-
-.feed-title {
-    text-align: center;
-    font-weight: bold;
-    font-style: italic;
-}
-
 .item_rede_social {
     display: flex;
 }
@@ -157,40 +88,4 @@ hr {
     position: relative;
     display: inline-block;
     cursor: pointer;
-}
-
-.chamada-newsletter {
-    text-align: center;
-    font-weight: bold;
-}
-
-.texto-se-liga {
-    text-align: center;
-    padding: 5px;
-}
-
-.botao-cadastro {
-    background-color: #009835;
-    border-radius: 4px;
-    font-size: 100%;
-    color: #fff;
-    padding: 3px 15px;
-    font-weight: bold;
-    background: transparent url(../img/botao_cadastro.png) no-repeat center top;
-}
-
-.page-contato {
-    padding: 30px;
-}
-
-.contatos-logo {
-    width: 30px;
-    height: 30px;
-    float: left;
-    margin: 10px;
-}
-
-.contatos-texto {
-    margin: auto;
-    padding: 15px;
 }
