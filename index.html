@@ -14,6 +14,21 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <script type="text/javascript" src="js/scripts.js" async></script>
+    <script>
+        $("#leadFormTopo").submit(function(event) {
+            event.preventDefault();
+
+            var $form = $(this);
+
+            var lead = {
+                "nome": $("#nomeTopo").val(),
+                "email": $("#emailTopo").val(),
+                "tipo": "b2c"
+            };
+            var url = "/app/lead/"
+            var posting = $.post(url, lead);
+        });
+    </script>
 </head>
 
 <body>
@@ -46,75 +61,75 @@
         </nav>
     </div>
 
-
     <div class="container">
         <div class="row">
             <div class="col-md-offset-7 col-md-4" style="position:fixed">
-                <form action="/" id="leadFormTopo">
-                        <h2 class="text-center">SE LIGA</h2>
-                        <div class="text-center">
+                <div style="color: #FFFFFF; background-color: #2E2D2C">
+                    <div class="row">
+                        <img src="img/logo_amarelo_preto.png" height=35px/>
+                    </div>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                </div>
+                <div style="background-color: #FFC533" class="text-center">
+                    <form action="/" id="leadFormTopo">
+                        <div class="panel-body">
+                            <h2 class="">SE LIGA</h2>
+
                             <div>
+
                                 <p><label for="nomeTopo">Nome</label>
                                     <input type="text" id="nomeTopo" name="nomeTopo" size="30" placeholder="Ex: José Silva" /></p>
                                 <p><label for="emailTopo">E-mail</label>
                                     <input type="text" id="emailTopo" name="emailTopo" label="Email" size="30" placeholder="Ex: jose@gmail.com" /></p>
                             </div>
                             <div>
-                                <button class="btn btn-primary btn-md active" type="submit">Cadastre-se</button>
+                                <button class="btn btn-primary btn-md active" type="submit">PRONTO!</button>
                             </div>
-                    </div>
-                </form>
-                <script>
-                    $("#leadFormTopo").submit(function(event) {
-                        event.preventDefault();
-
-                        var $form = $(this);
-
-                        var lead = {
-                            "nome": $("#nomeTopo").val(),
-                            "email": $("#emailTopo").val(),
-                            "tipo": "b2c"
-                        };
-                        var url = "/app/lead/"
-                        var posting = $.post(url, lead);
-                    });
-                </script>
-            </div>
-            <div class="col-md-4 ultimas_postagens">
-                <div class="thumbnail">
-                    <img src="img/dinheiro.jpg" alt="...">
-                    <div class="post-content">
-                        <h1>Título</h1>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro labore ab voluptatem. Ut obcaecati quasi ullam eaque deserunt itaque soluta, alias in voluptates adipisci nihil nostrum! Optio sapiente incidunt numquam. <a href='#'>Continuar lendo...</a></p>
-                    </div>
+                        </div>
+                    </form>
                 </div>
-            </div>
-            <div class="col-md-4 ultimas_postagens">
-                <div class="thumbnail">
-                    <img src="img/dinheiro.jpg" alt="...">
-                    <div class="post-content">
-                        <h1>Título</h1>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro labore ab voluptatem. Ut obcaecati quasi ullam eaque deserunt itaque soluta, alias in voluptates adipisci nihil nostrum! Optio sapiente incidunt numquam. <a href='#'>Continuar lendo...</a></p>
-                    </div>
-                </div>
+
             </div>
         </div>
-        <div class="row">
-            <div class="col-md-4 ultimas_postagens">
-                <div class="thumbnail">
-                    <img src="img/dinheiro.jpg" alt="...">
-                    <h1>Título</h1>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro labore ab voluptatem. Ut obcaecati quasi ullam eaque deserunt itaque soluta, alias in voluptates adipisci nihil nostrum! Optio sapiente incidunt numquam. <a href='#'>Continuar lendo...</a></p>
-                </div>
-            </div>
-            <div class="col-md-4 ultimas_postagens">
-                <div class="thumbnail">
-                    <img src="img/dinheiro.jpg" alt="...">
+
+    </div>
+
+    <div class="row">
+        <div class="col-md-4 ultimas_postagens">
+            <div class="thumbnail">
+                <img src="img/dinheiro.jpg" alt="...">
+                <div class="post-content">
                     <h1>Título</h1>
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro labore ab voluptatem. Ut obcaecati quasi ullam eaque deserunt itaque soluta, alias in voluptates adipisci nihil nostrum! Optio sapiente incidunt numquam. <a href='#'>Continuar lendo...</a></p>
                 </div>
             </div>
         </div>
+        <div class="col-md-4 ultimas_postagens">
+            <div class="thumbnail">
+                <img src="img/dinheiro.jpg" alt="...">
+                <div class="post-content">
+                    <h1>Título</h1>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro labore ab voluptatem. Ut obcaecati quasi ullam eaque deserunt itaque soluta, alias in voluptates adipisci nihil nostrum! Optio sapiente incidunt numquam. <a href='#'>Continuar lendo...</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-4 ultimas_postagens">
+            <div class="thumbnail">
+                <img src="img/dinheiro.jpg" alt="...">
+                <h1>Título</h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro labore ab voluptatem. Ut obcaecati quasi ullam eaque deserunt itaque soluta, alias in voluptates adipisci nihil nostrum! Optio sapiente incidunt numquam. <a href='#'>Continuar lendo...</a></p>
+            </div>
+        </div>
+        <div class="col-md-4 ultimas_postagens">
+            <div class="thumbnail">
+                <img src="img/dinheiro.jpg" alt="...">
+                <h1>Título</h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro labore ab voluptatem. Ut obcaecati quasi ullam eaque deserunt itaque soluta, alias in voluptates adipisci nihil nostrum! Optio sapiente incidunt numquam. <a href='#'>Continuar lendo...</a></p>
+            </div>
+        </div>
+    </div>
     </div>
 
 </body>
