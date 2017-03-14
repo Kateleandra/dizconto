@@ -9,11 +9,13 @@ body {}
   padding-left: 150px;
   display: flex;
 }
-h1{
-    text-align: center;
+
+h1 {
+  text-align: center;
 }
-div ul li{
-    text-decoration: none;
+
+div ul li {
+  text-decoration: none;
 }
 
 hr {
@@ -28,22 +30,20 @@ hr {
   margin: 20px;
 }
 
-.ultimas_postagens{;
+.ultimas_postagens {
+  ;
   max-width: 350px;
- float: left;
-
-box-sizing: border-box;
-
+  float: left;
+  box-sizing: border-box;
 }
+
 .postagens {
   border-style: solid;
   border-width: 2px;
   margin-left: 20px;
   max-width: 350px;
   margin-bottom: 2px;
-
-
- }
+}
 
 .rodape {
   border-top: solid;
@@ -51,7 +51,6 @@ box-sizing: border-box;
   border-bottom: solid;
   border-bottom-width: 1px;
   background-color: #d8d8d8;
-
 }
 
 .item_rede_social {
@@ -59,7 +58,11 @@ box-sizing: border-box;
 }
 
 .popup {
-    position: relative;
-    display: inline-block;
-    cursor: pointer;
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.div-cadastro {
+  
 }
