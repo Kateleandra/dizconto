@@ -188,8 +188,6 @@ div ul li {
     float: right;
 }
 
-<<<<<<< HEAD
-=======
 .menu-chamadas {
     color: #00F;
 }
@@ -200,7 +198,27 @@ div ul li {
     text-align: center;
 }
 
->>>>>>> origin/master
+.postagens-alinhamento {
+    text-align: left;
+}
+
+.titulo_postagem{
+    position: relative;
+    padding-left: 40px;
+}
+
+.postagens-subtitulo {
+    font-style: italic;
+    padding-top: 20px;
+    padding-left: 40px;
+}
+
+.postagens-texto {
+    padding: 40px;
+    line-height: inherit;
+    max-width: 700px;
+}
+
 #fonte_quadro {
     padding-top: 15px;
     padding-bottom: 15px;
