@@ -9,9 +9,6 @@ h1 {
 div ul li {
     text-decoration: none;
 }
-p{
-    text-align: justify;
-}
 .navbar .navbar-nav {
     display: inline-block;
     float: none;
@@ -199,21 +196,9 @@ p{
     margin: auto;
     padding-top: 20px;
     text-align: center;
+    padding: 50px;
 }
 
-<<<<<<< HEAD
-.titulo_postagem{
-    position:   relative;
-}
-
-.img_postagem{
-    width: 800px;
-    height: 700px;
-    margin-left: 15%;
-}
-.texto_postagem{
-    text-align: justify;
-=======
 .postagens-alinhamento {
     text-align: left;
 }
@@ -239,5 +224,4 @@ p{
     padding-top: 15px;
     padding-bottom: 15px;
     color: #0000;
->>>>>>> origin/master
 }
