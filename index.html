@@ -34,22 +34,9 @@
             var $form = $(this);
 
             var lead = {
-                "nome": $("#nomeB2B|").val(),
+                "nome": $("#nomeB2B").val(),
                 "email": $("#emailB2B").val(),
                 "tipo": "b2b"
-            };
-            var url = "/app/lead/"
-            var posting = $.post(url, lead);
-        });
-        $("#leadForm").submit(function(event) {
-            event.preventDefault();
-
-            var $form = $(this);
-
-            var lead = {
-                "nome": $("#nome").val(),
-                "email": $("#email").val(),
-                "tipo": "b2c"
             };
             var url = "/app/lead/"
             var posting = $.post(url, lead);
@@ -214,6 +201,21 @@
                     </div>
                 </div>
             </form>
+            <script>
+                $("#leadForm").submit(function(event) {
+                    event.preventDefault();
+
+                    var $form = $(this);
+
+                    var lead = {
+                        "nome": $("#nome").val(),
+                        "email": $("#email").val(),
+                        "tipo": "b2c"
+                    };
+                    var url = "/app/lead/"
+                    var posting = $.post(url, lead);
+                });
+            </script>
             <div class="feed-rodape">
                 <div class="col-md-4">
                     <h4 class="feed-title">Leonardo Oliveira - 21</h4>
