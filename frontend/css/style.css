@@ -34,6 +34,11 @@ div ul li {
     box-sizing: border-box;
 }
 
+.link_postagens{
+    text-decoration: none;
+
+}
+
 .postagens {
     border-style: solid;
     border-width: 2px;
