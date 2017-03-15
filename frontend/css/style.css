@@ -231,11 +231,12 @@ div ul li {
 
 }
 
-#fonte_quadro {
-    padding-top: 15px;
-    padding-bottom: 15px;
-    color: #0000;
-}
 .menu{
     position:fixed;
+}
+
+.postagens-alinha{
+ max-width: 80%;
+ text-align: justify;
+
 }
