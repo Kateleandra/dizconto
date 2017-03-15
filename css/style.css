@@ -182,5 +182,11 @@ div ul li {
     background-color: #282727;
     padding-top: 10px;
     padding-bottom: 10px;
+    display: flex;
+    float: right;
+}
+.fonte_quando{
+    padding-top: 15px;
+    padding-bottom: 15px;
     color: #0000;
 }
