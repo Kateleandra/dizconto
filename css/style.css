@@ -2,58 +2,6 @@ body {
     overflow-x: hidden;
 }
 
-.post-content {
-    top: 0;
-    left: 0;
-    position: absolute;
-}
-
-.thumbnail {
-    position: relative;
-}
-
-.cabecalho {
-    left: 100px;
-    padding-left: 150px;
-    display: flex;
-}
-
-.navbar .navbar-nav {
-    display: inline-block;
-    float: none;
-}
-
-.navbar .navbar-collapse {
-    text-align: center;
-}
-
-.logo_centro{
-    width: 600px;
-    height: 100px;
-    margin-bottom: 100px;
-    margin-left: 150px;
-
-}
-
-.rede_social {
-    width: 30px;
-    height: 30px;
-    margin-top: 10px;
-    display: flex;
-    float: right;
-}
-
-.cabecalho_redes {
-    background-color: #282727;
-}
-
-.cabecalho {
-    left: 120px;
-    padding-left: 200px;
-    display: flex;
-    background-color: #282727;
-}
-
 h1 {
     text-align: center;
 }
@@ -70,8 +18,23 @@ hr {
     height: 4px;
 }
 
-.div_postagens {
-    margin: 20px;
+.navbar .navbar-nav {
+    display: inline-block;
+    float: none;
+}
+
+.navbar .navbar-collapse {
+    text-align: center;
+}
+
+.post-content {
+    top: 0;
+    left: 0;
+    position: absolute;
+}
+
+.thumbnail {
+    position: relative;
 }
 
 .ultimas_postagens {
@@ -105,20 +68,6 @@ hr {
 
 .div_postagens {
     margin: 20px;
-}
-
-.ultimas_postagens {
-    max-width: 350px;
-    float: left;
-    box-sizing: border-box;
-}
-
-.postagens {
-    border-style: solid;
-    border-width: 2px;
-    margin-left: 20px;
-    max-width: 350px;
-    margin-bottom: 2px;
 }
 
 .se-liga {
@@ -169,12 +118,6 @@ hr {
     display: flex;
 }
 
-.popup {
-    position: relative;
-    display: inline-block;
-    cursor: pointer;
-}
-
 .chamada-newsletter {
     text-align: center;
     font-weight: bold;
@@ -211,12 +154,36 @@ hr {
     padding: 15px;
 }
 
-.item_rede_social {
-    display: flex;
+.logo_centro {
+    width: 600px;
+    height: 600px;
+    margin-bottom: 100px;
+    margin-left: 150px;
+    align-self: center;
 }
 
-.popup {
-    position: relative;
-    display: inline-block;
-    cursor: pointer;
+.logo {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 700px;
+}
+
+.rede_social {
+    width: 30px;
+    height: 30px;
+    margin-top: 10px;
+    display: flex;
+    float: right;
+}
+
+.cabecalho_redes {
+    background-color: #282727;
+    padding-right: 50px;
+}
+
+.cabecalho {
+    left: 120px;
+    display: flex;
+    background-color: #282727;
+    padding-bottom: 40px;
 }
