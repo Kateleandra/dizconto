@@ -1,4 +1,4 @@
-body { 
+body {
     overflow-x: hidden;
 }
 
@@ -9,15 +9,6 @@ h1 {
 div ul li {
     text-decoration: none;
 }
-
-hr {
-    border-top: 1px dashed #f00;
-    border-bottom: 1px solid #f00;
-    color: #000;
-    background-color: #000;
-    height: 4px;
-}
-
 .navbar .navbar-nav {
     display: inline-block;
     float: none;
@@ -186,4 +177,10 @@ hr {
     display: flex;
     background-color: #282727;
     padding-bottom: 40px;
+}
+.quandro_canto{
+    background-color: #282727;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    color: #0000;
 }
