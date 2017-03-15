@@ -1,230 +1,234 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head profile="http://www.w3.org/2005/10/profile">
-<link rel="icon"
-      type="image/png"
-      href="https://www.dizconto.com.br/img/diz.png">
+  <link rel="icon"
+  type="image/png"
+  href="https://www.dizconto.com.br/img/diz.png">
 
-    <meta charset="UTF-8">
-    <title>Dizconto</title>
-    <meta name="description" content="Somos um site que produz conteúdo sobre o mundo de vantagens do cashback e dos descontos. Oferecemos dicas e orientações de como você pode aproveitar ao máximo e não cair em uma furada.">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="./css/style.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="js/scripts.js" async></script>
-    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <script type="text/javascript" src="js/scripts.js" async></script>
+  <meta charset="UTF-8">
+  <title>Dizconto</title>
+  <meta name="description" content="Somos um site que produz conteúdo sobre o mundo de vantagens do cashback e dos descontos. Oferecemos dicas e orientações de como você pode aproveitar ao máximo e não cair em uma furada.">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="js/scripts.js" async></script>
+  <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <script type="text/javascript" src="js/scripts.js" async></script>
 </head>
 
 <body>
   <div id="seLigaModal" class="modal fade" role="dialog">
-      <div class="modal-dialog">
-          <div class="modal-content">
-              <div class="modal-header se-liga-header">
-                  <button type="button" class="close" data-dismiss="modal">&times;</button>
-                  <h1 class="chamada-newsletter">SE LIGA</h1>
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header se-liga-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h1 class="chamada-newsletter">SE LIGA</h1>
+        </div>
+        <div class="modal-body se-liga">
+          <form action="/" id="leadFormB2C">
+            <div>
+              <div class="col-md-12">
+                <h5 class="chamada-newsletter">ASSINE NOSSA NEWSLETTER</h5>
+                <p class="texto-se-liga">Não fica dando bobeira! Cadastre-se que a gente te envia os melhores descontos da internet!</p>
+                <div class="text-center">
+                  <div>
+                    <input type="text" name="nome" id="nomeB2C" size="40" placeholder="Nome Completo" /></p>
+                    <input type="text" name="email" id="emailB2C" size="40" placeholder="E-mail" /></p>
+                  </div>
+                  <div>
+                    <button class="botao-cadastro" type="submit">PRONTO!</button>
+                  </div>
+                </div>
               </div>
-              <div class="modal-body se-liga">
-                  <form action="/" id="leadFormB2C">
-                      <div>
-                          <div class="col-md-12">
-                              <h5 class="chamada-newsletter">ASSINE NOSSA NEWSLETTER</h5>
-                              <p class="texto-se-liga">Não fica dando bobeira! Cadastre-se que a gente te envia os melhores descontos da internet!</p>
-                              <div class="text-center">
-                                  <div>
-                                      <input type="text" name="nome" id="nomeB2C" size="40" placeholder="Nome Completo" /></p>
-                                      <input type="text" name="email" id="emailB2C" size="40" placeholder="E-mail" /></p>
-                                  </div>
-                                  <div>
-                                      <button class="botao-cadastro" type="submit">PRONTO!</button>
-                                  </div>
-                              </div>
-                          </div>
-                      </div>
-                  </form>
-                  <script>
-                      $("#leadFormB2C").submit(function(event) {
-                          event.preventDefault();
+            </div>
+          </form>
+          <script>
+            $("#leadFormB2C").submit(function(event) {
+              event.preventDefault();
 
-                          var $form = $(this);
+              var $form = $(this);
 
-                          var lead = {
-                              "nome": $("#nomeB2C").val(),
-                              "email": $("#emailB2C").val(),
-                              "tipo": "b2c"
-                          };
-                          var url = "/app/lead/"
-                          var posting = $.post(url, lead);
-                      });
-                  </script>
-              </div>
-          </div>
+              var lead = {
+                "nome": $("#nomeB2C").val(),
+                "email": $("#emailB2C").val(),
+                "tipo": "b2c"
+              };
+              var url = "/app/lead/"
+              var posting = $.post(url, lead);
+              $('#seLigaModal').modal('hide');
+              $('.modal-backdrop').remove();
+            });
+          </script>
+        </div>
       </div>
+    </div>
   </div>
   <div id="seLigaEmpresaModal" class="modal fade" role="dialog">
-      <div class="modal-dialog">
-          <div class="modal-content">
-              <div class="modal-header se-liga-header">
-                  <button type="button" class="close" data-dismiss="modal">&times;</button>
-                  <h1 class="chamada-newsletter">GANHE CLIENTES</h1>
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header se-liga-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h1 class="chamada-newsletter">GANHE CLIENTES</h1>
+        </div>
+        <div class="modal-body se-liga">
+          <form action="/" id="leadFormB2B">
+            <div>
+              <div class="col-md-12">
+                <h5 class="chamada-newsletter">ASSINE NOSSA NEWSLETTER</h5>
+                <p class="texto-se-liga">Ganhe e fidelize seus clientes! Deixe seu nome e email comercial que entraremos em contato com você!</p>
+                <div class="text-center">
+                  <div>
+                    <input type="text" name="nome" id="nomeB2B" size="40" placeholder="Nome Completo" /></p>
+                    <input type="text" name="email" id="emailB2B" size="40" placeholder="E-mail" /></p>
+                  </div>
+                  <div>
+                    <button class="botao-cadastro" type="submit">PRONTO!</button>
+                  </div>
+                </div>
               </div>
-              <div class="modal-body se-liga">
-                  <form action="/" id="leadFormB2B">
-                      <div>
-                          <div class="col-md-12">
-                              <h5 class="chamada-newsletter">ASSINE NOSSA NEWSLETTER</h5>
-                              <p class="texto-se-liga">Ganhe e fidelize seus clientes! Deixe seu nome e email comercial que entraremos em contato com você!</p>
-                              <div class="text-center">
-                                  <div>
-                                      <input type="text" name="nome" id="nomeB2B" size="40" placeholder="Nome Completo" /></p>
-                                      <input type="text" name="email" id="emailB2B" size="40" placeholder="E-mail" /></p>
-                                  </div>
-                                  <div>
-                                      <button class="botao-cadastro" type="submit">PRONTO!</button>
-                                  </div>
-                              </div>
-                          </div>
-                      </div>
-                  </form>
-                  <script>
-                      $("#leadFormB2B").submit(function(event) {
-                          event.preventDefault();
+            </div>
+          </form>
+          <script>
+            $("#leadFormB2B").submit(function(event) {
+              event.preventDefault();
 
-                          var $form = $(this);
+              var $form = $(this);
 
-                          var lead = {
-                              "nome": $("#nomeB2B").val(),
-                              "email": $("#emailB2B").val(),
-                              "tipo": "b2b"
-                          };
-                          var url = "/app/lead/"
-                          var posting = $.post(url, lead);
-                      });
-                  </script>
-              </div>
-          </div>
+              var lead = {
+                "nome": $("#nomeB2B").val(),
+                "email": $("#emailB2B").val(),
+                "tipo": "b2b"
+              };
+              var url = "/app/lead/"
+              var posting = $.post(url, lead);
+              $('#seLigaEmpresaModal').modal('hide');
+              $('.modal-backdrop').remove();
+            });
+          </script>
+        </div>
       </div>
+    </div>
   </div>
-    <div class="row cabecalho_redes">
-        <div>
-            <div>
-            <a href="https://www.facebook.com/dizconto/"><img class="rede_social img-responsive" href="" src="./img/fc.png" alt="facebook"></a>
-            </div>
-            <div>
-            <a href="https://www.instagram.com/dizconto/"><img class="rede_social img-responsive" src="./img/ins.png" alt="instagram"></a>
-            </div>
-            <div>
-            <a href="https://twitter.com/dizconto"><img class="rede_social img-responsive" src="./img/tw.png" alt="twitter"></a>
-            </div>
-        </div>
+  <div class="row cabecalho_redes">
+    <div>
+      <div>
+        <a href="https://www.facebook.com/dizconto/"><img class="rede_social img-responsive" href="" src="./img/fc.png" alt="facebook"></a>
+      </div>
+      <div>
+        <a href="https://www.instagram.com/dizconto/"><img class="rede_social img-responsive" src="./img/ins.png" alt="instagram"></a>
+      </div>
+      <div>
+        <a href="https://twitter.com/dizconto"><img class="rede_social img-responsive" src="./img/tw.png" alt="twitter"></a>
+      </div>
     </div>
-    <div class="row cabecalho">
-        <div class="logo col-md-12"> <img class="logo_centro" src="./img/logo_centro.png" alt="logo DizConto"></div>
-    </div>
-    <div class="row">
-        <nav class=" nav-pills navbar-collapse navbar navbar-inverse">
-            <div class="container-fluid">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-                      <span class="icon-bar"></span>
-                      <span class="icon-bar"></span>
-                      <span class="icon-bar"></span>
-                  </button>
-              </div>
-              <div class="collapse navbar-collapse" id="myNavbar">
-                <ul class="nav navbar-nav menu">
-                    <li><a href="index.html">HOME</a></li>
-                    <li><a href="sobre.html">SOBRE</a></li>
-                    <li><a href="#" data-toggle="modal" data-target="#seLigaModal" class="menu-chamadas">SE LIGA</a></li>
-                    <li><a href="contatos.html">CONTATO</a></li>
-                    <li><a href="#" data-toggle="modal" data-target="#seLigaEmpresaModal" class="menu-chamadas">PARA SUA EMPRESA</a></li>
-                </ul>
-            </div>
+  </div>
+  <div class="row cabecalho">
+    <div class="logo col-md-12"> <img class="logo_centro" src="./img/logo_centro.png" alt="logo DizConto"></div>
+  </div>
+  <div class="row">
+    <nav class=" nav-pills navbar-collapse navbar navbar-inverse">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
         </div>
+        <div class="collapse navbar-collapse" id="myNavbar">
+          <ul class="nav navbar-nav menu">
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="sobre.html">SOBRE</a></li>
+            <li><a href="#" data-toggle="modal" data-target="#seLigaModal" class="menu-chamadas">SE LIGA</a></li>
+            <li><a href="contatos.html">CONTATO</a></li>
+            <li><a href="#" data-toggle="modal" data-target="#seLigaEmpresaModal" class="menu-chamadas">PARA SUA EMPRESA</a></li>
+          </ul>
+        </div>
+      </div>
     </nav>
-</div>
-<div class="container">
+  </div>
+  <div class="container">
     <div class="row">
       <div class="container">
         <div class="row">
-            <div class="col-md-12">
-                <img class="img-responsive" src="img/dinheiro.jpg" alt="">
+          <div class="col-md-12">
+            <img class="img-responsive" src="img/dinheiro.jpg" alt="">
+          </div>
+          <div class="col-md-8">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus vero excepturi, a eius deserunt impedit. Vero accusantium dicta reprehenderit facilis similique aliquam amet! Iure atque incidunt quaerat, qui delectus dolorum.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint mollitia optio quos commodi nam sunt in, animi sed nobis. Cupiditate quidem reprehenderit soluta facilis, veniam tempora illum error velit? Ipsam.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil dicta sunt eligendi neque! Impedit cumque nisi, itaque quis expedita, ipsum, obcaecati accusamus sapiente, repudiandae repellat sed? Dolorum voluptate unde nobis.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga modi doloribus eligendi, commodi magnam fugit excepturi dolores iusto, reiciendis maxime corporis cum aperiam incidunt eum debitis ducimus recusandae soluta qui?</p>
+          </div>
+
+          <hr>
+
+
+          <div class="col-md-4 quadro_canto">
+            <div>
+              <div class="col-md-12">
+                <img class="img-responsive" src="img/logo_centro.png" alt="logo_centro">
+
+                <p id="fonte_quadro">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex cumque impedit deserunt nostrum iusto tempore alias placeat assumenda animi numquam perferendis, magnam similique, sequi sunt atque, aliquam tempora nesciunt voluptates.</p>
+              </div>
             </div>
-            <div class="col-md-8">
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus vero excepturi, a eius deserunt impedit. Vero accusantium dicta reprehenderit facilis similique aliquam amet! Iure atque incidunt quaerat, qui delectus dolorum.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint mollitia optio quos commodi nam sunt in, animi sed nobis. Cupiditate quidem reprehenderit soluta facilis, veniam tempora illum error velit? Ipsam.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil dicta sunt eligendi neque! Impedit cumque nisi, itaque quis expedita, ipsum, obcaecati accusamus sapiente, repudiandae repellat sed? Dolorum voluptate unde nobis.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga modi doloribus eligendi, commodi magnam fugit excepturi dolores iusto, reiciendis maxime corporis cum aperiam incidunt eum debitis ducimus recusandae soluta qui?</p>
-            </div>
-
-            <hr>
-
-
-            <div class="col-md-4 quadro_canto">
-                <div>
-                    <div class="col-md-12">
-                        <img class="img-responsive" src="img/logo_centro.png" alt="logo_centro">
-
-                        <p id="fonte_quadro">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex cumque impedit deserunt nostrum iusto tempore alias placeat assumenda animi numquam perferendis, magnam similique, sequi sunt atque, aliquam tempora nesciunt voluptates.</p>
-                        </div>
-                    </div>
+          </div>
+        </div>
+        <hr>
+        <footer>
+          <form class="se-liga" action="/" id="leadForm">
+            <div>
+              <div class="col-md-12">
+                <h1 class="chamada-newsletter">SE LIGA</h1>
+                <h5 class="chamada-newsletter">ASSINE NOSSA NEWSLETTER</h5>
+                <p class="texto-se-liga">Não fica dando bobeira! Cadastre-se que a gente te envia os melhores descontos da internet!</p>
+                <div class="text-center">
+                  <div>
+                    <input type="text" name="nome" id="nome" size="40" placeholder="Nome Completo" /></p>
+                    <input type="text" name="email" id="email" size="40" placeholder="E-mail" /></p>
+                  </div>
+                  <div>
+                    <button class="botao-cadastro" type="submit">PRONTO!</button>
+                  </div>
                 </div>
+              </div>
             </div>
-            <hr>
-            <footer>
-                <form class="se-liga" action="/" id="leadForm">
-                    <div>
-                        <div class="col-md-12">
-                            <h1 class="chamada-newsletter">SE LIGA</h1>
-                            <h5 class="chamada-newsletter">ASSINE NOSSA NEWSLETTER</h5>
-                            <p class="texto-se-liga">Não fica dando bobeira! Cadastre-se que a gente te envia os melhores descontos da internet!</p>
-                            <div class="text-center">
-                                <div>
-                                    <input type="text" name="nome" id="nome" size="40" placeholder="Nome Completo" /></p>
-                                    <input type="text" name="email" id="email" size="40" placeholder="E-mail" /></p>
-                                </div>
-                                <div>
-                                    <button class="botao-cadastro" type="submit">PRONTO!</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </form>
-                <script>
-                    $("#leadForm").submit(function(event) {
-                        event.preventDefault();
+          </form>
+          <script>
+            $("#leadForm").submit(function(event) {
+              event.preventDefault();
 
-                        var $form = $(this);
+              var $form = $(this);
 
-                        var lead = {
-                            "nome": $("#nome").val(),
-                            "email": $("#email").val(),
-                            "tipo": "b2c"
-                        };
-                        var url = "/app/lead/"
-                        var posting = $.post(url, lead);
-                    });
-                </script>
-                <div class="feed-rodape">
-                    <div class="col-md-4">
-                        <h4 class="feed-title">Leonardo Oliveira - 21</h4>
-                        <p class="feed-text">"Utilizar um sistema de cashback foi ótimo. Várias das lojas parceiras eram lojas nas quais eu já realizava compras, então ganhar um pouco do dinheiro de volta é sempre bom. Além disso, consegui alguns cupons de descontos muito bons,
-                            principalmente na compra de livros. É um sistema que vale a pena."</p>
-                    </div>
-                    <div class="col-md-4">
-                        <h4 class="feed-title">Gabriela Resende - 23</h4>
-                        <p class="feed-text">"Bom, eu uso Dotz há algum tempo. Meus pontos vem tanto de compras em lojas parceiras, quanto dos pontos do meu cartão de crédito, que resolvi transferir pro Dotz. Minha experiência, foi muito boa. Já consegui 2 trechos de ida pro
-                            Rio de Janeiro com pouquíssimos pontos! Além disso, o Dotz vive lançando promoções de liquidação, em que é possível trocar por excelente produtos. Fora os períodos de promoção, uso muito também pra trocar por ingressos pro cinema."</p>
-                    </div>
-                    <div class="col-md-4">
-                        <h4 class="feed-title">Victor Medeiros - 25</h4>
-                        <p class="feed-text">"Faço compras online assiduamente, e a possibilidade de ser bonificado nessas transações me estimulam a continuar adquirindo os produtos que desejo. Consigo conciliar os descontos oferecidos pelo programa e os bônus em novas compras.
-                            Em minha última compra obtive desconto de 15% nos livros que queria, além de poder comprar outros itens pagando parte do valor com os bônus que consegui durante a compra. Considero esses programas de bonificação uma forma segura,
-                            eficiente e acertiva de fidelizar o cliente"</p>
-                    </div>
+              var lead = {
+                "nome": $("#nome").val(),
+                "email": $("#email").val(),
+                "tipo": "b2c"
+              };
+              var url = "/app/lead/"
+              var posting = $.post(url, lead);
+            });
+          </script>
+          <div class="feed-rodape">
+            <div class="col-md-4">
+              <h4 class="feed-title">Leonardo Oliveira - 21</h4>
+              <p class="feed-text">"Utilizar um sistema de cashback foi ótimo. Várias das lojas parceiras eram lojas nas quais eu já realizava compras, então ganhar um pouco do dinheiro de volta é sempre bom. Além disso, consegui alguns cupons de descontos muito bons,
+                principalmente na compra de livros. É um sistema que vale a pena."</p>
+              </div>
+              <div class="col-md-4">
+                <h4 class="feed-title">Gabriela Resende - 23</h4>
+                <p class="feed-text">"Bom, eu uso Dotz há algum tempo. Meus pontos vem tanto de compras em lojas parceiras, quanto dos pontos do meu cartão de crédito, que resolvi transferir pro Dotz. Minha experiência, foi muito boa. Já consegui 2 trechos de ida pro
+                  Rio de Janeiro com pouquíssimos pontos! Além disso, o Dotz vive lançando promoções de liquidação, em que é possível trocar por excelente produtos. Fora os períodos de promoção, uso muito também pra trocar por ingressos pro cinema."</p>
                 </div>
-            </footer>
+                <div class="col-md-4">
+                  <h4 class="feed-title">Victor Medeiros - 25</h4>
+                  <p class="feed-text">"Faço compras online assiduamente, e a possibilidade de ser bonificado nessas transações me estimulam a continuar adquirindo os produtos que desejo. Consigo conciliar os descontos oferecidos pelo programa e os bônus em novas compras.
+                    Em minha última compra obtive desconto de 15% nos livros que queria, além de poder comprar outros itens pagando parte do valor com os bônus que consegui durante a compra. Considero esses programas de bonificação uma forma segura,
+                    eficiente e acertiva de fidelizar o cliente"</p>
+                  </div>
+                </div>
+              </footer>
 
-    </body>
-</html>
+            </body>
+            </html>
