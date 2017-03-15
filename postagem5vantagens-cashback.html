@@ -17,64 +17,94 @@
 </head>
 
 <body>
-    <div id="seLigaModal" class="modal fade" role="dialog">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header se-liga-header">
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h1 class="chamada-newsletter">SE LIGA</h1>
-                </div>
-                <div class="modal-body se-liga">
-                    <form action="/" id="leadFormB2C">
-                        <div>
-                            <div class="col-md-12">
-                                <h5 class="chamada-newsletter">ASSINE NOSSA NEWSLETTER</h5>
-                                <p class="texto-se-liga">Não fica dando bobeira! Cadastre-se que a gente te envia os melhores descontos da internet!</p>
-                                <div class="text-center">
-                                    <div>
-                                        <input type="text" name="nome" id="nome" size="40" placeholder="Nome Completo" /></p>
-                                        <input type="text" name="email" id="email" size="40" placeholder="E-mail" /></p>
-                                    </div>
-                                    <div>
-                                        <button class="botao-cadastro" type="submit">PRONTO!</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div id="seLigaEmpresaModal" class="modal fade" role="dialog">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header se-liga-header">
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h1 class="chamada-newsletter">GANHE CLIENTES</h1>
-                </div>
-                <div class="modal-body se-liga">
-                    <form action="/" id="leadFormB2C">
-                        <div>
-                            <div class="col-md-12">
-                                <h5 class="chamada-newsletter">ASSINE NOSSA NEWSLETTER</h5>
-                                <p class="texto-se-liga">Ganhe e fidelize seus clientes! Deixe seu nome e email comercial que entraremos em contato com você!</p>
-                                <div class="text-center">
-                                    <div>
-                                        <input type="text" name="nome" id="nome" size="40" placeholder="Nome Completo" /></p>
-                                        <input type="text" name="email" id="email" size="40" placeholder="E-mail" /></p>
-                                    </div>
-                                    <div>
-                                        <button class="botao-cadastro" type="submit">PRONTO!</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-        </div>
+  <div id="seLigaModal" class="modal fade" role="dialog">
+      <div class="modal-dialog">
+          <div class="modal-content">
+              <div class="modal-header se-liga-header">
+                  <button type="button" class="close" data-dismiss="modal">&times;</button>
+                  <h1 class="chamada-newsletter">SE LIGA</h1>
+              </div>
+              <div class="modal-body se-liga">
+                  <form action="/" id="leadFormB2C">
+                      <div>
+                          <div class="col-md-12">
+                              <h5 class="chamada-newsletter">ASSINE NOSSA NEWSLETTER</h5>
+                              <p class="texto-se-liga">Não fica dando bobeira! Cadastre-se que a gente te envia os melhores descontos da internet!</p>
+                              <div class="text-center">
+                                  <div>
+                                      <input type="text" name="nome" id="nomeB2C" size="40" placeholder="Nome Completo" /></p>
+                                      <input type="text" name="email" id="emailB2C" size="40" placeholder="E-mail" /></p>
+                                  </div>
+                                  <div>
+                                      <button class="botao-cadastro" type="submit">PRONTO!</button>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </form>
+                  <script>
+                      $("#leadFormB2C").submit(function(event) {
+                          event.preventDefault();
+
+                          var $form = $(this);
+
+                          var lead = {
+                              "nome": $("#nomeB2C").val(),
+                              "email": $("#emailB2C").val(),
+                              "tipo": "b2c"
+                          };
+                          var url = "/app/lead/"
+                          var posting = $.post(url, lead);
+                      });
+                  </script>
+              </div>
+          </div>
+      </div>
+  </div>
+  <div id="seLigaEmpresaModal" class="modal fade" role="dialog">
+      <div class="modal-dialog">
+          <div class="modal-content">
+              <div class="modal-header se-liga-header">
+                  <button type="button" class="close" data-dismiss="modal">&times;</button>
+                  <h1 class="chamada-newsletter">GANHE CLIENTES</h1>
+              </div>
+              <div class="modal-body se-liga">
+                  <form action="/" id="leadFormB2B">
+                      <div>
+                          <div class="col-md-12">
+                              <h5 class="chamada-newsletter">ASSINE NOSSA NEWSLETTER</h5>
+                              <p class="texto-se-liga">Ganhe e fidelize seus clientes! Deixe seu nome e email comercial que entraremos em contato com você!</p>
+                              <div class="text-center">
+                                  <div>
+                                      <input type="text" name="nome" id="nomeB2B" size="40" placeholder="Nome Completo" /></p>
+                                      <input type="text" name="email" id="emailB2B" size="40" placeholder="E-mail" /></p>
+                                  </div>
+                                  <div>
+                                      <button class="botao-cadastro" type="submit">PRONTO!</button>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </form>
+                  <script>
+                      $("#leadFormB2B").submit(function(event) {
+                          event.preventDefault();
+
+                          var $form = $(this);
+
+                          var lead = {
+                              "nome": $("#nomeB2B").val(),
+                              "email": $("#emailB2B").val(),
+                              "tipo": "b2b"
+                          };
+                          var url = "/app/lead/"
+                          var posting = $.post(url, lead);
+                      });
+                  </script>
+              </div>
+          </div>
+      </div>
+  </div>
     <div class="row cabecalho_redes">
         <div>
             <div>
@@ -148,120 +178,58 @@
             DeiOpa, leu todo o texto mas ainda não sabe como funciona o Cashback? Veja nosso post sobre Cashback: compras incríveis com retorno financeiro.
             <p>Não se cansou de nós? Quer receber mais conteúdos como este? Deixe seu e-mail que vamos te enviar dicas preciosas, pode ficar tranquilo detestamos spam. Só mandaremos conteúdo massa!</p><hr>
             </div>
-            <!-- Scripts-->
-    <script>
-        $("#leadFormB2C").submit(function(event) {
-            event.preventDefault();
-            var $form = $(this);
-            var lead = {
-                "nome": $("#nome").val(),
-                "email": $("#email").val(),
-                "tipo": "b2c"
-            };
-            var url = "/app/lead/"
-            var posting = $.post(url, lead);
-        });
-    </script>
-    <script>
-        $("#leadFormB2B").submit(function(event) {
-            event.preventDefault();
-            var $form = $(this);
-            var lead = {
-                "nome": $("#nome").val(),
-                "email": $("#email").val(),
-                "tipo": "b2b"
-            };
-            var url = "/app/lead/"
-            var posting = $.post(url, lead);
-        });
-    </script>
-    <script>
-        $("#leadForm").submit(function(event) {
-            event.preventDefault();
-            var $form = $(this);
-            var lead = {
-                "nome": $("#nome").val(),
-                "email": $("#email").val(),
-                "tipo": "b2c"
-            };
-            var url = "/app/lead/"
-            var posting = $.post(url, lead);
-        });
-    </script>
-            <hr>
-    <!-- Scripts-->
-    <script>
-        $("#leadFormB2C").submit(function(event) {
-            event.preventDefault();
-            var $form = $(this);
-            var lead = {
-                "nome": $("#nome").val(),
-                "email": $("#email").val(),
-                "tipo": "b2c"
-            };
-            var url = "/app/lead/"
-            var posting = $.post(url, lead);
-        });
-    </script>
-    <script>
-        $("#leadFormB2B").submit(function(event) {
-            event.preventDefault();
-            var $form = $(this);
-            var lead = {
-                "nome": $("#nome").val(),
-                "email": $("#email").val(),
-                "tipo": "b2b"
-            };
-            var url = "/app/lead/"
-            var posting = $.post(url, lead);
-        });
-    </script>
-    <script>
-        $("#leadForm").submit(function(event) {
-            event.preventDefault();
-            var $form = $(this);
-            var lead = {
-                "nome": $("#nome").val(),
-                "email": $("#email").val(),
-                "tipo": "b2c"
-            };
-            var url = "/app/lead/"
-            var posting = $.post(url, lead);
-        });
-    </script>
-    <footer>
-        <form class="se-liga" action="/" id="leadForm">
-            <div>
-                <div class="col-md-12">
-                    <h1 class="chamada-newsletter">SE LIGA</h1>
-                    <h5 class="chamada-newsletter">ASSINE NOSSA NEWSLETTER</h5>
-                    <p class="texto-se-liga">Não fica dando bobeira! Cadastre-se que a gente te envia os melhores descontos da internet!</p>
-                    <div class="text-center">
-                        <div>
-                            <input type="text" name="nome" id="nome" size="40" placeholder="Nome Completo" /></p>
-                            <input type="text" name="email" id="email" size="40" placeholder="E-mail" /></p>
-                        </div>
-                        <div>
-                            <button class="botao-cadastro" type="submit">PRONTO!</button>
+            <footer>
+                <form class="se-liga" action="/" id="leadForm">
+                    <div>
+                        <div class="col-md-12">
+                            <h1 class="chamada-newsletter">SE LIGA</h1>
+                            <h5 class="chamada-newsletter">ASSINE NOSSA NEWSLETTER</h5>
+                            <p class="texto-se-liga">Não fica dando bobeira! Cadastre-se que a gente te envia os melhores descontos da internet!</p>
+                            <div class="text-center">
+                                <div>
+                                    <input type="text" name="nome" id="nome" size="40" placeholder="Nome Completo" /></p>
+                                    <input type="text" name="email" id="email" size="40" placeholder="E-mail" /></p>
+                                </div>
+                                <div>
+                                    <button class="botao-cadastro" type="submit">PRONTO!</button>
+                                </div>
+                            </div>
                         </div>
                     </div>
+                </form>
+                <script>
+                    $("#leadForm").submit(function(event) {
+                        event.preventDefault();
+
+                        var $form = $(this);
+
+                        var lead = {
+                            "nome": $("#nome").val(),
+                            "email": $("#email").val(),
+                            "tipo": "b2c"
+                        };
+                        var url = "/app/lead/"
+                        var posting = $.post(url, lead);
+                    });
+                </script>
+                <div class="feed-rodape">
+                    <div class="col-md-4">
+                        <h4 class="feed-title">Leonardo Oliveira - 21</h4>
+                        <p class="feed-text">"Utilizar um sistema de cashback foi ótimo. Várias das lojas parceiras eram lojas nas quais eu já realizava compras, então ganhar um pouco do dinheiro de volta é sempre bom. Além disso, consegui alguns cupons de descontos muito bons,
+                            principalmente na compra de livros. É um sistema que vale a pena."</p>
+                    </div>
+                    <div class="col-md-4">
+                        <h4 class="feed-title">Gabriela Resende - 23</h4>
+                        <p class="feed-text">"Bom, eu uso Dotz há algum tempo. Meus pontos vem tanto de compras em lojas parceiras, quanto dos pontos do meu cartão de crédito, que resolvi transferir pro Dotz. Minha experiência, foi muito boa. Já consegui 2 trechos de ida pro
+                            Rio de Janeiro com pouquíssimos pontos! Além disso, o Dotz vive lançando promoções de liquidação, em que é possível trocar por excelente produtos. Fora os períodos de promoção, uso muito também pra trocar por ingressos pro cinema."</p>
+                    </div>
+                    <div class="col-md-4">
+                        <h4 class="feed-title">Victor Medeiros - 25</h4>
+                        <p class="feed-text">"Faço compras online assiduamente, e a possibilidade de ser bonificado nessas transações me estimulam a continuar adquirindo os produtos que desejo. Consigo conciliar os descontos oferecidos pelo programa e os bônus em novas compras.
+                            Em minha última compra obtive desconto de 15% nos livros que queria, além de poder comprar outros itens pagando parte do valor com os bônus que consegui durante a compra. Considero esses programas de bonificação uma forma segura,
+                            eficiente e acertiva de fidelizar o cliente"</p>
+                    </div>
                 </div>
-            </div>
-        </form>
-        <div class="feed-rodape">
-            <div class="col-md-4">
-                <h4 class="feed-title">Leonardo Oliveira - 21</h4>
-                <p class="feed-text">"Utilizar um sistema de cashback foi ótimo. Várias das lojas parceiras eram lojas nas quais eu já realizava compras, então ganhar um pouco do dinheiro de volta é sempre bom. Além disso, consegui alguns cupons de descontos muito bons, principalmente na compra de livros. É um sistema que vale a pena."</p>
-            </div>
-            <div class="col-md-4">
-                <h4 class="feed-title">Leonardo Oliveira - 21</h4>
-                <p class="feed-text">"Utilizar um sistema de cashback foi ótimo. Várias das lojas parceiras eram lojas nas quais eu já realizava compras, então ganhar um pouco do dinheiro de volta é sempre bom. Além disso, consegui alguns cupons de descontos muito bons, principalmente na compra de livros. É um sistema que vale a pena."</p>
-            </div>
-            <div class="col-md-4">
-                <h4 class="feed-title">Leonardo Oliveira - 21</h4>
-                <p class="feed-text">"Utilizar um sistema de cashback foi ótimo. Várias das lojas parceiras eram lojas nas quais eu já realizava compras, então ganhar um pouco do dinheiro de volta é sempre bom. Além disso, consegui alguns cupons de descontos muito bons, principalmente na compra de livros. É um sistema que vale a pena."</p>
-            </div>
-        </div>
-    </footer>
+            </footer>
     </body>
 </html>
