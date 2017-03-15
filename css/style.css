@@ -97,6 +97,7 @@ div ul li {
 .feed-text {
     padding: 12px;
     font-style: italic;
+    text-align: center;
 }
 
 .feed-title {
@@ -186,6 +187,11 @@ div ul li {
 
 .menu-chamadas {
     color: #00F;
+}
+
+.sobre-texto {
+    margin: 20px;
+    text-align: center;
 }
 
 #fonte_quadro {
