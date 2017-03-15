@@ -238,5 +238,8 @@ div ul li {
 .postagens-alinha{
  max-width: 80%;
  text-align: justify;
+}
 
+.links{
+color: #000;
 }
