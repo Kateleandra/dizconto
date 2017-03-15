@@ -172,44 +172,98 @@
     });
 </script>
 
-        <footer class="col-md-4 quandro_canto">
-            <form class="quandro_canto">
+        <div class="col-md-4 quandro_canto">
+            <div class="quandro_canto">
                 <div>
                     <div class="col-md-12">
                         <img class="img-responsive" src="img/logo_centro.png" alt="">
-                        <p class="quandro_canto"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex cumque impedit deserunt nostrum iusto tempore alias placeat assumenda animi numquam perferendis, magnam similique, sequi sunt atque, aliquam tempora nesciunt voluptates.</p>
+                        <p class="fonte_quadro" style="color: #0000;">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex cumque impedit deserunt nostrum iusto tempore alias placeat assumenda animi numquam perferendis, magnam similique, sequi sunt atque, aliquam tempora nesciunt voluptates.</p>
                     </div>
                 </div>
-            </form>
-
+            </div>
         </div>
-    </div>
-</div>
-</footer>
+        <hr>
+<!-- Scripts-->
+<script>
+    $("#leadFormB2C").submit(function(event) {
+        event.preventDefault();
 
-        <footer class="col-md-4">
-            <form class="se-liga" action="/" id="leadForm">
-                <div>
-                    <div class="col-md-12">
-                        <h1 class="chamada-newsletter">SE LIGA</h1>
-                        <h5 class="chamada-newsletter">ASSINE NOSSA NEWSLETTER</h5>
-                        <p class="texto-se-liga">Não fica dando bobeira! Cadastre-se que a gente te envia os melhores descontos da internet!</p>
-                        <div class="text-center">
-                            <div>
-                                <input type="text" name="nome" id="nome" size="40" placeholder="Nome Completo" /></p>
-                                <input type="text" name="email" id="email" size="40" placeholder="E-mail" /></p>
-                            </div>
-                            <div>
-                                <button class="botao-cadastro" type="submit">PRONTO!</button>
-                            </div>
-                        </div>
+        var $form = $(this);
+
+        var lead = {
+            "nome": $("#nome").val(),
+            "email": $("#email").val(),
+            "tipo": "b2c"
+        };
+        var url = "/app/lead/"
+        var posting = $.post(url, lead);
+    });
+</script>
+<script>
+    $("#leadFormB2B").submit(function(event) {
+        event.preventDefault();
+
+        var $form = $(this);
+
+        var lead = {
+            "nome": $("#nome").val(),
+            "email": $("#email").val(),
+            "tipo": "b2b"
+        };
+        var url = "/app/lead/"
+        var posting = $.post(url, lead);
+    });
+</script>
+<script>
+    $("#leadForm").submit(function(event) {
+        event.preventDefault();
+
+        var $form = $(this);
+
+        var lead = {
+            "nome": $("#nome").val(),
+            "email": $("#email").val(),
+            "tipo": "b2c"
+        };
+        var url = "/app/lead/"
+        var posting = $.post(url, lead);
+    });
+</script>
+
+
+<footer>
+    <form class="se-liga" action="/" id="leadForm">
+        <div>
+            <div class="col-md-12">
+                <h1 class="chamada-newsletter">SE LIGA</h1>
+                <h5 class="chamada-newsletter">ASSINE NOSSA NEWSLETTER</h5>
+                <p class="texto-se-liga">Não fica dando bobeira! Cadastre-se que a gente te envia os melhores descontos da internet!</p>
+                <div class="text-center">
+                    <div>
+                        <input type="text" name="nome" id="nome" size="40" placeholder="Nome Completo" /></p>
+                        <input type="text" name="email" id="email" size="40" placeholder="E-mail" /></p>
+                    </div>
+                    <div>
+                        <button class="botao-cadastro" type="submit">PRONTO!</button>
                     </div>
                 </div>
-            </form>
-
+            </div>
+        </div>
+    </form>
+    <div class="feed-rodape">
+        <div class="col-md-4">
+            <h4 class="feed-title">Leonardo Oliveira - 21</h4>
+            <p class="feed-text">"Utilizar um sistema de cashback foi ótimo. Várias das lojas parceiras eram lojas nas quais eu já realizava compras, então ganhar um pouco do dinheiro de volta é sempre bom. Além disso, consegui alguns cupons de descontos muito bons, principalmente na compra de livros. É um sistema que vale a pena."</p>
+        </div>
+        <div class="col-md-4">
+            <h4 class="feed-title">Leonardo Oliveira - 21</h4>
+            <p class="feed-text">"Utilizar um sistema de cashback foi ótimo. Várias das lojas parceiras eram lojas nas quais eu já realizava compras, então ganhar um pouco do dinheiro de volta é sempre bom. Além disso, consegui alguns cupons de descontos muito bons, principalmente na compra de livros. É um sistema que vale a pena."</p>
+        </div>
+        <div class="col-md-4">
+            <h4 class="feed-title">Leonardo Oliveira - 21</h4>
+            <p class="feed-text">"Utilizar um sistema de cashback foi ótimo. Várias das lojas parceiras eram lojas nas quais eu já realizava compras, então ganhar um pouco do dinheiro de volta é sempre bom. Além disso, consegui alguns cupons de descontos muito bons, principalmente na compra de livros. É um sistema que vale a pena."</p>
         </div>
     </div>
-</div>
 </footer>
 </body>
 </html>
