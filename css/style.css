@@ -152,7 +152,7 @@ div ul li {
     display: block;
     position: relative;
     padding: inherit;
-    left: 10%
+    left: 16%
 }
 
 .logo {
@@ -167,6 +167,7 @@ div ul li {
     margin-top: 10px;
     display: flex;
     float: right;
+    padding-top: 70px;
 }
 
 .cabecalho_redes {
@@ -178,7 +179,7 @@ div ul li {
     left: 120px;
     display: flex;
     background-color: #282727;
-    padding-bottom: 40px;
+    padding-bottom: 70px;
 }
 .quadro_canto{
     background-color: #282727;
@@ -221,11 +222,14 @@ div ul li {
 }
 
 .imagens-chamadas-home {
-    
+
 }
 
 #fonte_quadro {
     padding-top: 15px;
     padding-bottom: 15px;
     color: #0000;
+}
+.menu{
+    position:fixed;
 }
