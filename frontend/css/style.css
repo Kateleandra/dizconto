@@ -9,6 +9,9 @@ h1 {
 div ul li {
     text-decoration: none;
 }
+p{
+    text-align: justify;
+}
 .navbar .navbar-nav {
     display: inline-block;
     float: none;
@@ -185,8 +188,6 @@ div ul li {
     float: right;
 }
 
-<<<<<<< HEAD
-=======
 .menu-chamadas {
     color: #00F;
 }
@@ -196,9 +197,15 @@ div ul li {
     text-align: center;
 }
 
->>>>>>> origin/master
-#fonte_quadro {
-    padding-top: 15px;
-    padding-bottom: 15px;
-    color: #0000;
+.titulo_postagem{
+    position:   relative;
+}
+
+.img_postagem{
+    width: 800px;
+    height: 700px;
+    margin-left: 15%;
+}
+.texto_postagem{
+    text-align: justify;
 }
