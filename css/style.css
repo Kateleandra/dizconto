@@ -147,9 +147,12 @@ div ul li {
 }
 
 .logo_centro {
-    width: 500px;
-    height: 600px;
-    align-self: center;
+    width: 70%;
+    height: auto;
+    display: block;
+    position: relative;
+    padding: inherit;
+    left: 10%
 }
 
 .logo {
@@ -190,7 +193,8 @@ div ul li {
 }
 
 .sobre-texto {
-    margin: 20px;
+    margin: auto;
+    padding-top: 20px;
     text-align: center;
 }
 
