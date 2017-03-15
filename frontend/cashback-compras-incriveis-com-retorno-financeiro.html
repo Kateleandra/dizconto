@@ -59,6 +59,8 @@
                             };
                             var url = "/app/lead/"
                             var posting = $.post(url, lead);
+                            $('#seLigaModal').modal('hide');
+                            $('.modal-backdrop').remove();
                         });
                     </script>
                 </div>
@@ -103,6 +105,8 @@
                             };
                             var url = "/app/lead/"
                             var posting = $.post(url, lead);
+                            $('#seLigaEmpresaModal').modal('hide');
+                            $('.modal-backdrop').remove();
                         });
                     </script>
                 </div>
@@ -134,98 +138,98 @@
                       <span class="icon-bar"></span>
                       <span class="icon-bar"></span>
                   </button>
-                </div>
-                <div class="collapse navbar-collapse" id="myNavbar">
-                    <ul class="nav navbar-nav">
-                        <li><a href="index.html">HOME</a></li>
-                        <li><a href="sobre.html">SOBRE</a></li>
-                        <li><a href="#" data-toggle="modal" data-target="#seLigaModal" class="menu-chamadas">SE LIGA</a></li>
-                        <li><a href="contatos.html">CONTATO</a></li>
-                        <li><a href="#" data-toggle="modal" data-target="#seLigaEmpresaModal" class="menu-chamadas">PARA SUA EMPRESA</a></li>
-                    </ul>
-                </div>
+              </div>
+              <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav">
+                    <li><a href="index.html">HOME</a></li>
+                    <li><a href="sobre.html">SOBRE</a></li>
+                    <li><a href="#" data-toggle="modal" data-target="#seLigaModal" class="menu-chamadas">SE LIGA</a></li>
+                    <li><a href="contatos.html">CONTATO</a></li>
+                    <li><a href="#" data-toggle="modal" data-target="#seLigaEmpresaModal" class="menu-chamadas">PARA SUA EMPRESA</a></li>
+                </ul>
             </div>
-        </nav>
-    </div>
-    <hr>
+        </div>
+    </nav>
+</div>
+<hr>
 
-    <div class="container">
-        <div class="row">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12 postagens-alinhamento">
-                        <h3 class="titulo_postagem"><b>Cashback: <br/>compras incríveis com retorno financeiro</b></h3>
-                        <h4 class="postagens-subtitulo">Comprar e ainda ter parte do seu dinheiro de volta. Tem jeito? </h4>
-                    </div>
-                    <div class="col-md-8 postagens-alinhamento">
-                        <h5 class="postagens-texto">Tem e  você não está delirando! Estamos falando de Cashback.<br/>
-                    Já ouviu falar? Em inglês cashback é dinheiro de volta e surgiu em 1992 com a plataforma de e-commerce Amazon (https://www.amazon.com). O modelo chegou ao Brasil em 2007 e hoje está bombando para os amantes de preços mais baixos.<br/><br/>
-                    <b>&nbsp;Como funciona o Cashback na prática?</b><br/>
-                    &nbsp;&nbsp;1. Acesse o site da empresa que trabalha com o esquema de Cashback.<br/>
-                    &nbsp;&nbsp;2.Faça o seu cadastro.<br/>
-                    &nbsp;&nbsp;3.Localize a loja parceira que você tem interesse de compra.<br/>
-                    &nbsp;&nbsp;4.Ative essa loja. Na verdade é como se você assinasse que para aquela loja online você quer ter descontos e cashback.<br/>
-                    &nbsp;&nbsp;5.Faça sua compra normalmente pelo site da empresa que você "assinou".<br/>
-                    &nbsp;&nbsp;6.A loja online irá "avisar" de que você fez uma compra e a empresa de Cashback irá se encarregar de lhe devolver este valor em dinheiro.
-                </h5>
-                    </div>
+<div class="container">
+    <div class="row">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 postagens-alinhamento">
+                    <h3 class="titulo_postagem"><b>Cashback: <br/>compras incríveis com retorno financeiro</b></h3>
+                    <h4 class="postagens-subtitulo">Comprar e ainda ter parte do seu dinheiro de volta. Tem jeito? </h4>
+                </div>
+                <div class="col-md-8 postagens-alinhamento">
+                    <h5 class="postagens-texto">Tem e  você não está delirando! Estamos falando de Cashback.<br/>
+                        Já ouviu falar? Em inglês cashback é dinheiro de volta e surgiu em 1992 com a plataforma de e-commerce Amazon (https://www.amazon.com). O modelo chegou ao Brasil em 2007 e hoje está bombando para os amantes de preços mais baixos.<br/><br/>
+                        <b>&nbsp;Como funciona o Cashback na prática?</b><br/>
+                        &nbsp;&nbsp;1. Acesse o site da empresa que trabalha com o esquema de Cashback.<br/>
+                        &nbsp;&nbsp;2.Faça o seu cadastro.<br/>
+                        &nbsp;&nbsp;3.Localize a loja parceira que você tem interesse de compra.<br/>
+                        &nbsp;&nbsp;4.Ative essa loja. Na verdade é como se você assinasse que para aquela loja online você quer ter descontos e cashback.<br/>
+                        &nbsp;&nbsp;5.Faça sua compra normalmente pelo site da empresa que você "assinou".<br/>
+                        &nbsp;&nbsp;6.A loja online irá "avisar" de que você fez uma compra e a empresa de Cashback irá se encarregar de lhe devolver este valor em dinheiro.
+                    </h5>
+                </div>
 
-                    <hr>
+                <hr>
 
-                    <footer>
-                        <form class="se-liga" action="/" id="leadForm">
-                            <div>
-                                <div class="col-md-12">
-                                    <h1 class="chamada-newsletter">SE LIGA</h1>
-                                    <h5 class="chamada-newsletter">ASSINE NOSSA NEWSLETTER</h5>
-                                    <p class="texto-se-liga">Não fica dando bobeira! Cadastre-se que a gente te envia os melhores descontos da internet!</p>
-                                    <div class="text-center">
-                                        <div>
-                                            <input type="text" name="nome" id="nome" size="40" placeholder="Nome Completo" /></p>
-                                            <input type="text" name="email" id="email" size="40" placeholder="E-mail" /></p>
-                                        </div>
-                                        <div>
-                                            <button class="botao-cadastro" type="submit">PRONTO!</button>
-                                        </div>
+                <footer>
+                    <form class="se-liga" action="/" id="leadForm">
+                        <div>
+                            <div class="col-md-12">
+                                <h1 class="chamada-newsletter">SE LIGA</h1>
+                                <h5 class="chamada-newsletter">ASSINE NOSSA NEWSLETTER</h5>
+                                <p class="texto-se-liga">Não fica dando bobeira! Cadastre-se que a gente te envia os melhores descontos da internet!</p>
+                                <div class="text-center">
+                                    <div>
+                                        <input type="text" name="nome" id="nome" size="40" placeholder="Nome Completo" /></p>
+                                        <input type="text" name="email" id="email" size="40" placeholder="E-mail" /></p>
+                                    </div>
+                                    <div>
+                                        <button class="botao-cadastro" type="submit">PRONTO!</button>
                                     </div>
                                 </div>
                             </div>
-                        </form>
-                        <script>
-                            $("#leadForm").submit(function(event) {
-                                event.preventDefault();
+                        </div>
+                    </form>
+                    <script>
+                        $("#leadForm").submit(function(event) {
+                            event.preventDefault();
 
-                                var $form = $(this);
+                            var $form = $(this);
 
-                                var lead = {
-                                    "nome": $("#nome").val(),
-                                    "email": $("#email").val(),
-                                    "tipo": "b2c"
-                                };
-                                var url = "/app/lead/"
-                                var posting = $.post(url, lead);
-                            });
-                        </script>
-                        <div class="feed-rodape">
-                            <div class="col-md-4">
-                                <h4 class="feed-title">Leonardo Oliveira - 21</h4>
-                                <p class="feed-text">"Utilizar um sistema de cashback foi ótimo. Várias das lojas parceiras eram lojas nas quais eu já realizava compras, então ganhar um pouco do dinheiro de volta é sempre bom. Além disso, consegui alguns cupons de descontos
-                                    muito bons, principalmente na compra de livros. É um sistema que vale a pena."</p>
+                            var lead = {
+                                "nome": $("#nome").val(),
+                                "email": $("#email").val(),
+                                "tipo": "b2c"
+                            };
+                            var url = "/app/lead/"
+                            var posting = $.post(url, lead);
+                        });
+                    </script>
+                    <div class="feed-rodape">
+                        <div class="col-md-4">
+                            <h4 class="feed-title">Leonardo Oliveira - 21</h4>
+                            <p class="feed-text">"Utilizar um sistema de cashback foi ótimo. Várias das lojas parceiras eram lojas nas quais eu já realizava compras, então ganhar um pouco do dinheiro de volta é sempre bom. Além disso, consegui alguns cupons de descontos
+                                muito bons, principalmente na compra de livros. É um sistema que vale a pena."</p>
                             </div>
                             <div class="col-md-4">
                                 <h4 class="feed-title">Gabriela Resende - 23</h4>
                                 <p class="feed-text">"Bom, eu uso Dotz há algum tempo. Meus pontos vem tanto de compras em lojas parceiras, quanto dos pontos do meu cartão de crédito, que resolvi transferir pro Dotz. Minha experiência, foi muito boa. Já consegui 2 trechos
                                     de ida pro Rio de Janeiro com pouquíssimos pontos! Além disso, o Dotz vive lançando promoções de liquidação, em que é possível trocar por excelente produtos. Fora os períodos de promoção, uso muito também pra trocar
                                     por ingressos pro cinema."</p>
-                            </div>
-                            <div class="col-md-4">
-                                <h4 class="feed-title">Victor Medeiros - 25</h4>
-                                <p class="feed-text">"Faço compras online assiduamente, e a possibilidade de ser bonificado nessas transações me estimulam a continuar adquirindo os produtos que desejo. Consigo conciliar os descontos oferecidos pelo programa e os bônus em
-                                    novas compras. Em minha última compra obtive desconto de 15% nos livros que queria, além de poder comprar outros itens pagando parte do valor com os bônus que consegui durante a compra. Considero esses programas de
-                                    bonificação uma forma segura, eficiente e acertiva de fidelizar o cliente"</p>
-                            </div>
-                        </div>
-                    </footer>
-</body>
+                                </div>
+                                <div class="col-md-4">
+                                    <h4 class="feed-title">Victor Medeiros - 25</h4>
+                                    <p class="feed-text">"Faço compras online assiduamente, e a possibilidade de ser bonificado nessas transações me estimulam a continuar adquirindo os produtos que desejo. Consigo conciliar os descontos oferecidos pelo programa e os bônus em
+                                        novas compras. Em minha última compra obtive desconto de 15% nos livros que queria, além de poder comprar outros itens pagando parte do valor com os bônus que consegui durante a compra. Considero esses programas de
+                                        bonificação uma forma segura, eficiente e acertiva de fidelizar o cliente"</p>
+                                    </div>
+                                </div>
+                            </footer>
+                        </body>
 
-</html>
+                        </html>

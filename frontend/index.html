@@ -59,6 +59,8 @@
                             };
                             var url = "/app/lead/"
                             var posting = $.post(url, lead);
+                            $('#seLigaModal').modal('hide');
+                            $('.modal-backdrop').remove();
                         });
                     </script>
                 </div>
@@ -103,6 +105,8 @@
                             };
                             var url = "/app/lead/"
                             var posting = $.post(url, lead);
+                            $('#seLigaEmpresaModal').modal('hide');
+                            $('.modal-backdrop').remove();
                         });
                     </script>
                 </div>

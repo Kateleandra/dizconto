@@ -2,238 +2,243 @@
 <html lang="pt-br">
 
 <head profile="http://www.w3.org/2005/10/profile">
-<link rel="icon"
-      type="image/png"
-      href="https://www.dizconto.com.br/img/diz.png">
+  <link rel="icon"
+  type="image/png"
+  href="https://www.dizconto.com.br/img/diz.png">
 
-    <meta charset="UTF-8">
-    <title>Dizconto Blog</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="./css/style.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="js/scripts.js" async></script>
-    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <script type="text/javascript" src="js/scripts.js" async></script>
+  <meta charset="UTF-8">
+  <title>Dizconto Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="js/scripts.js" async></script>
+  <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <script type="text/javascript" src="js/scripts.js" async></script>
 </head>
 
 <body>
   <div id="seLigaModal" class="modal fade" role="dialog">
-      <div class="modal-dialog">
-          <div class="modal-content">
-              <div class="modal-header se-liga-header">
-                  <button type="button" class="close" data-dismiss="modal">&times;</button>
-                  <h1 class="chamada-newsletter">SE LIGA</h1>
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header se-liga-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h1 class="chamada-newsletter">SE LIGA</h1>
+        </div>
+        <div class="modal-body se-liga">
+          <form action="/" id="leadFormB2C">
+            <div>
+              <div class="col-md-12">
+                <h5 class="chamada-newsletter">ASSINE NOSSA NEWSLETTER</h5>
+                <p class="texto-se-liga">Não fica dando bobeira! Cadastre-se que a gente te envia os melhores descontos da internet!</p>
+                <div class="text-center">
+                  <div>
+                    <input type="text" name="nome" id="nomeB2C" size="40" placeholder="Nome Completo" /></p>
+                    <input type="text" name="email" id="emailB2C" size="40" placeholder="E-mail" /></p>
+                  </div>
+                  <div>
+                    <button class="botao-cadastro" type="submit">PRONTO!</button>
+                  </div>
+                </div>
               </div>
-              <div class="modal-body se-liga">
-                  <form action="/" id="leadFormB2C">
-                      <div>
-                          <div class="col-md-12">
-                              <h5 class="chamada-newsletter">ASSINE NOSSA NEWSLETTER</h5>
-                              <p class="texto-se-liga">Não fica dando bobeira! Cadastre-se que a gente te envia os melhores descontos da internet!</p>
-                              <div class="text-center">
-                                  <div>
-                                      <input type="text" name="nome" id="nomeB2C" size="40" placeholder="Nome Completo" /></p>
-                                      <input type="text" name="email" id="emailB2C" size="40" placeholder="E-mail" /></p>
-                                  </div>
-                                  <div>
-                                      <button class="botao-cadastro" type="submit">PRONTO!</button>
-                                  </div>
-                              </div>
-                          </div>
-                      </div>
-                  </form>
-                  <script>
-                      $("#leadFormB2C").submit(function(event) {
-                          event.preventDefault();
+            </div>
+          </form>
+          <script>
+            $("#leadFormB2C").submit(function(event) {
+              event.preventDefault();
 
-                          var $form = $(this);
+              var $form = $(this);
 
-                          var lead = {
-                              "nome": $("#nomeB2C").val(),
-                              "email": $("#emailB2C").val(),
-                              "tipo": "b2c"
-                          };
-                          var url = "/app/lead/"
-                          var posting = $.post(url, lead);
-                      });
-                  </script>
-              </div>
-          </div>
+              var lead = {
+                "nome": $("#nomeB2C").val(),
+                "email": $("#emailB2C").val(),
+                "tipo": "b2c"
+              };
+              var url = "/app/lead/"
+              var posting = $.post(url, lead);
+              $('#seLigaModal').modal('hide');
+              $('.modal-backdrop').remove();
+            });
+          </script>
+        </div>
       </div>
+    </div>
   </div>
   <div id="seLigaEmpresaModal" class="modal fade" role="dialog">
-      <div class="modal-dialog">
-          <div class="modal-content">
-              <div class="modal-header se-liga-header">
-                  <button type="button" class="close" data-dismiss="modal">&times;</button>
-                  <h1 class="chamada-newsletter">GANHE CLIENTES</h1>
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header se-liga-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h1 class="chamada-newsletter">GANHE CLIENTES</h1>
+        </div>
+        <div class="modal-body se-liga">
+          <form action="/" id="leadFormB2B">
+            <div>
+              <div class="col-md-12">
+                <h5 class="chamada-newsletter">ASSINE NOSSA NEWSLETTER</h5>
+                <p class="texto-se-liga">Ganhe e fidelize seus clientes! Deixe seu nome e email comercial que entraremos em contato com você!</p>
+                <div class="text-center">
+                  <div>
+                    <input type="text" name="nome" id="nomeB2B" size="40" placeholder="Nome Completo" /></p>
+                    <input type="text" name="email" id="emailB2B" size="40" placeholder="E-mail" /></p>
+                  </div>
+                  <div>
+                    <button class="botao-cadastro" type="submit">PRONTO!</button>
+                  </div>
+                </div>
               </div>
-              <div class="modal-body se-liga">
-                  <form action="/" id="leadFormB2B">
-                      <div>
-                          <div class="col-md-12">
-                              <h5 class="chamada-newsletter">ASSINE NOSSA NEWSLETTER</h5>
-                              <p class="texto-se-liga">Ganhe e fidelize seus clientes! Deixe seu nome e email comercial que entraremos em contato com você!</p>
-                              <div class="text-center">
-                                  <div>
-                                      <input type="text" name="nome" id="nomeB2B" size="40" placeholder="Nome Completo" /></p>
-                                      <input type="text" name="email" id="emailB2B" size="40" placeholder="E-mail" /></p>
-                                  </div>
-                                  <div>
-                                      <button class="botao-cadastro" type="submit">PRONTO!</button>
-                                  </div>
-                              </div>
-                          </div>
-                      </div>
-                  </form>
-                  <script>
-                      $("#leadFormB2B").submit(function(event) {
-                          event.preventDefault();
+            </div>
+          </form>
+          <script>
+            $("#leadFormB2B").submit(function(event) {
+              event.preventDefault();
 
-                          var $form = $(this);
+              var $form = $(this);
 
-                          var lead = {
-                              "nome": $("#nomeB2B").val(),
-                              "email": $("#emailB2B").val(),
-                              "tipo": "b2b"
-                          };
-                          var url = "/app/lead/"
-                          var posting = $.post(url, lead);
-                      });
-                  </script>
-              </div>
-          </div>
+              var lead = {
+                "nome": $("#nomeB2B").val(),
+                "email": $("#emailB2B").val(),
+                "tipo": "b2b"
+              };
+              var url = "/app/lead/"
+              var posting = $.post(url, lead);
+              $('#seLigaEmpresaModal').modal('hide');
+              $('.modal-backdrop').remove();
+            });
+          </script>
+        </div>
       </div>
+    </div>
   </div>
-    <div class="row cabecalho_redes">
-        <div>
-            <div>
-            <a href="https://www.facebook.com/dizconto/"><img class="rede_social img-responsive" href="" src="./img/fc.png" alt="facebook"></a>
-            </div>
-            <div>
-            <a href="https://www.instagram.com/dizconto/"><img class="rede_social img-responsive" src="./img/ins.png" alt="instagram"></a>
-            </div>
-            <div>
-            <a href="https://twitter.com/dizconto"><img class="rede_social img-responsive" src="./img/tw.png" alt="twitter"></a>
-            </div>
-        </div>
+  <div class="row cabecalho_redes">
+    <div>
+      <div>
+        <a href="https://www.facebook.com/dizconto/"><img class="rede_social img-responsive" href="" src="./img/fc.png" alt="facebook"></a>
+      </div>
+      <div>
+        <a href="https://www.instagram.com/dizconto/"><img class="rede_social img-responsive" src="./img/ins.png" alt="instagram"></a>
+      </div>
+      <div>
+        <a href="https://twitter.com/dizconto"><img class="rede_social img-responsive" src="./img/tw.png" alt="twitter"></a>
+      </div>
     </div>
-    <div class="row cabecalho">
-        <div class="logo col-md-12"> <img class="logo_centro" src="./img/logo_centro.png" alt="logo DizConto"></div>
-    </div>
-    <div class="row">
-        <nav class="navbar navbar-default navbar-custom navbar-fixed-top nav-pills navbar-collapse navbar navbar-inverse navbar-inversa fixo-navbar-top">
-            <div class="container-fluid">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-                      <span class="icon-bar"></span>
-                      <span class="icon-bar"></span>
-                      <span class="icon-bar"></span>
-                  </button>
-              </div>
-              <div class="collapse navbar-collapse" id="myNavbar">
-                <ul class="nav navbar-nav">
-                    <li><a href="index.html">HOME</a></li>
-                    <li><a href="sobre.html">SOBRE</a></li>
-                    <li><a href="#" data-toggle="modal" data-target="#seLigaModal" class="menu-chamadas">SE LIGA</a></li>
-                    <li><a href="contatos.html">CONTATO</a></li>
-                    <li><a href="#" data-toggle="modal" data-target="#seLigaEmpresaModal" class="menu-chamadas">PARA SUA EMPRESA</a></li>
-                </ul>
-            </div>
+  </div>
+  <div class="row cabecalho">
+    <div class="logo col-md-12"> <img class="logo_centro" src="./img/logo_centro.png" alt="logo DizConto"></div>
+  </div>
+  <div class="row">
+    <nav class="navbar navbar-default navbar-custom navbar-fixed-top nav-pills navbar-collapse navbar navbar-inverse navbar-inversa fixo-navbar-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
         </div>
+        <div class="collapse navbar-collapse" id="myNavbar">
+          <ul class="nav navbar-nav">
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="sobre.html">SOBRE</a></li>
+            <li><a href="#" data-toggle="modal" data-target="#seLigaModal" class="menu-chamadas">SE LIGA</a></li>
+            <li><a href="contatos.html">CONTATO</a></li>
+            <li><a href="#" data-toggle="modal" data-target="#seLigaEmpresaModal" class="menu-chamadas">PARA SUA EMPRESA</a></li>
+          </ul>
+        </div>
+      </div>
     </nav>
-</div>
-<hr>
+  </div>
+  <hr>
 
-<div class="container">
+  <div class="container">
     <div class="row">
       <div class="container">
         <div class="row">
-            <div class="col-md-12">
+          <div class="col-md-12">
             <h1 class="titulo_postagem">5 Razões para olhar pro Cashback com carinho</h1>
             <br>
             <br>
-<p>Se você é daqueles que não perde uma oportunidade de fazer negócios, busca parcerias que agreguem seu produto e sabe da importância da frase "quem não é visto não é lembrado", então continue a leitura, este texto é para você! Estamos falando de cashback, uma compra que tem parte do dinheiro de volta. Para os consumidores uma excelente opção e para os lojistas uma ótima forma de vender e conseguir mais clientes. Ótimo agora que você já sabe o conceito entenda as razões pelos quais consideramos que o sistema cashback pode bombar seus negócios.</p>
+            <p>Se você é daqueles que não perde uma oportunidade de fazer negócios, busca parcerias que agreguem seu produto e sabe da importância da frase "quem não é visto não é lembrado", então continue a leitura, este texto é para você! Estamos falando de cashback, uma compra que tem parte do dinheiro de volta. Para os consumidores uma excelente opção e para os lojistas uma ótima forma de vender e conseguir mais clientes. Ótimo agora que você já sabe o conceito entenda as razões pelos quais consideramos que o sistema cashback pode bombar seus negócios.</p>
 
-<p><h3>1. Ganhar público engajado</h3>
-A proposta do cashback é a seguinte: as empresas pagam para anunciar e parte desse valor é devolvido ao consumidor quando ele efetua a compra. Com isso, as empresas de cashback atraem mais público para as lojas, uma vez que, há um benefício concreto oferecido para o cliente.
-</p>
-<p><h3>2. Economizar com marketing</h3>
-Imagina fazer uma espécie de marketing consignado? É assim que funciona a divulgação com as empresas de cashback. Ou seja, você só paga pelo consumidor que efetuou a compra, isso que é retorno garantido. Torna-se uma grande vantagem em mercados cada vez mais competitivos.
-</p>
 
-<p><h3>3. Fidelizar clientes</h3>
+            <p><h3>1. Ganhar público engajado</h3>
+              A proposta do cashback é a seguinte: as empresas pagam para anunciar e parte desse valor é devolvido ao consumidor quando ele efetua a compra. Com isso, as empresas de cashback atraem mais público para as lojas, uma vez que, há um benefício concreto oferecido para o cliente.
+            </p>
+            <p><h3>2. Economizar com marketing</h3>
+              Imagina fazer uma espécie de marketing consignado? É assim que funciona a divulgação com as empresas de cashback. Ou seja, você só paga pelo consumidor que efetuou a compra, isso que é retorno garantido. Torna-se uma grande vantagem em mercados cada vez mais competitivos.
+            </p>
 
-Confira sempre os valores do frete. Existem momentos que não adianta ter bons descontos se o frete é mais caro do que o valor que você irá economizar. Considere sempre o valor final da compra.</p>
+            <p><h3>3. Fidelizar clientes</h3>
 
-<p><h3>4. Otimizar o comercial da empresa</h3>
-As empresas de cashback, quando guia um consumidor apto a comprar na sua loja ela está cumprindo o papel que é do setor comercial da empresa com a vantagem de levar o público já com predisposição a efetuar a compra poupando parte do trabalho que seria realizado pela equipe de vendas.
-</p>
+              Confira sempre os valores do frete. Existem momentos que não adianta ter bons descontos se o frete é mais caro do que o valor que você irá economizar. Considere sempre o valor final da compra.</p>
 
-<p><h3>5. Alavancar as vendas</h3>
-No contexto atual dos consumidores, vender não é mais como era antigamente, as recompensas deixaram de ser apenas agrados extras e tornaram-se importante critério de escolha na mente do cliente, nesse sentido, o cashback oferece uma maior chance para as suas vendas porque entrega uma recompensa imediata e tangível.
-</p>
+              <p><h3>4. Otimizar o comercial da empresa</h3>
+                As empresas de cashback, quando guia um consumidor apto a comprar na sua loja ela está cumprindo o papel que é do setor comercial da empresa com a vantagem de levar o público já com predisposição a efetuar a compra poupando parte do trabalho que seria realizado pela equipe de vendas.
+              </p>
 
-<p>Quer receber mais conteúdos como este? Deixe seu e-mail que vamos te enviar dicas preciosas, pode ficar tranquilo nós também detestamos spam. Só mandaremos conteúdo massa!</p><hr>
+              <p><h3>5. Alavancar as vendas</h3>
+                No contexto atual dos consumidores, vender não é mais como era antigamente, as recompensas deixaram de ser apenas agrados extras e tornaram-se importante critério de escolha na mente do cliente, nesse sentido, o cashback oferece uma maior chance para as suas vendas porque entrega uma recompensa imediata e tangível.
+              </p>
+
+              <p>Quer receber mais conteúdos como este? Deixe seu e-mail que vamos te enviar dicas preciosas, pode ficar tranquilo nós também detestamos spam. Só mandaremos conteúdo massa!</p><hr>
             </div>
 
             <hr>
             <footer>
-                <form class="se-liga" action="/" id="leadForm">
-                    <div>
-                        <div class="col-md-12">
-                            <h1 class="chamada-newsletter">SE LIGA</h1>
-                            <h5 class="chamada-newsletter">ASSINE NOSSA NEWSLETTER</h5>
-                            <p class="texto-se-liga">Não fica dando bobeira! Cadastre-se que a gente te envia os melhores descontos da internet!</p>
-                            <div class="text-center">
-                                <div>
-                                    <input type="text" name="nome" id="nome" size="40" placeholder="Nome Completo" /></p>
-                                    <input type="text" name="email" id="email" size="40" placeholder="E-mail" /></p>
-                                </div>
-                                <div>
-                                    <button class="botao-cadastro" type="submit">PRONTO!</button>
-                                </div>
-                            </div>
-                        </div>
+              <form class="se-liga" action="/" id="leadForm">
+                <div>
+                  <div class="col-md-12">
+                    <h1 class="chamada-newsletter">SE LIGA</h1>
+                    <h5 class="chamada-newsletter">ASSINE NOSSA NEWSLETTER</h5>
+                    <p class="texto-se-liga">Não fica dando bobeira! Cadastre-se que a gente te envia os melhores descontos da internet!</p>
+                    <div class="text-center">
+                      <div>
+                        <input type="text" name="nome" id="nome" size="40" placeholder="Nome Completo" /></p>
+                        <input type="text" name="email" id="email" size="40" placeholder="E-mail" /></p>
+                      </div>
+                      <div>
+                        <button class="botao-cadastro" type="submit">PRONTO!</button>
+                      </div>
                     </div>
-                </form>
-                <script>
-                    $("#leadForm").submit(function(event) {
-                        event.preventDefault();
-
-                        var $form = $(this);
-
-                        var lead = {
-                            "nome": $("#nome").val(),
-                            "email": $("#email").val(),
-                            "tipo": "b2c"
-                        };
-                        var url = "/app/lead/"
-                        var posting = $.post(url, lead);
-                    });
-                </script>
-                <div class="feed-rodape">
-                    <div class="col-md-4">
-                        <h4 class="feed-title">Leonardo Oliveira - 21</h4>
-                        <p class="feed-text">"Utilizar um sistema de cashback foi ótimo. Várias das lojas parceiras eram lojas nas quais eu já realizava compras, então ganhar um pouco do dinheiro de volta é sempre bom. Além disso, consegui alguns cupons de descontos muito bons,
-                            principalmente na compra de livros. É um sistema que vale a pena."</p>
-                    </div>
-                    <div class="col-md-4">
-                        <h4 class="feed-title">Gabriela Resende - 23</h4>
-                        <p class="feed-text">"Bom, eu uso Dotz há algum tempo. Meus pontos vem tanto de compras em lojas parceiras, quanto dos pontos do meu cartão de crédito, que resolvi transferir pro Dotz. Minha experiência, foi muito boa. Já consegui 2 trechos de ida pro
-                            Rio de Janeiro com pouquíssimos pontos! Além disso, o Dotz vive lançando promoções de liquidação, em que é possível trocar por excelente produtos. Fora os períodos de promoção, uso muito também pra trocar por ingressos pro cinema."</p>
-                    </div>
-                    <div class="col-md-4">
-                        <h4 class="feed-title">Victor Medeiros - 25</h4>
-                        <p class="feed-text">"Faço compras online assiduamente, e a possibilidade de ser bonificado nessas transações me estimulam a continuar adquirindo os produtos que desejo. Consigo conciliar os descontos oferecidos pelo programa e os bônus em novas compras.
-                            Em minha última compra obtive desconto de 15% nos livros que queria, além de poder comprar outros itens pagando parte do valor com os bônus que consegui durante a compra. Considero esses programas de bonificação uma forma segura,
-                            eficiente e acertiva de fidelizar o cliente"</p>
-                    </div>
+                  </div>
                 </div>
-            </footer>
-    </body>
-</html>
+              </form>
+              <script>
+                $("#leadForm").submit(function(event) {
+                  event.preventDefault();
+
+                  var $form = $(this);
+
+                  var lead = {
+                    "nome": $("#nome").val(),
+                    "email": $("#email").val(),
+                    "tipo": "b2c"
+                  };
+                  var url = "/app/lead/"
+                  var posting = $.post(url, lead);
+                });
+              </script>
+              <div class="feed-rodape">
+                <div class="col-md-4">
+                  <h4 class="feed-title">Leonardo Oliveira - 21</h4>
+                  <p class="feed-text">"Utilizar um sistema de cashback foi ótimo. Várias das lojas parceiras eram lojas nas quais eu já realizava compras, então ganhar um pouco do dinheiro de volta é sempre bom. Além disso, consegui alguns cupons de descontos muito bons,
+                    principalmente na compra de livros. É um sistema que vale a pena."</p>
+                  </div>
+                  <div class="col-md-4">
+                    <h4 class="feed-title">Gabriela Resende - 23</h4>
+                    <p class="feed-text">"Bom, eu uso Dotz há algum tempo. Meus pontos vem tanto de compras em lojas parceiras, quanto dos pontos do meu cartão de crédito, que resolvi transferir pro Dotz. Minha experiência, foi muito boa. Já consegui 2 trechos de ida pro
+                      Rio de Janeiro com pouquíssimos pontos! Além disso, o Dotz vive lançando promoções de liquidação, em que é possível trocar por excelente produtos. Fora os períodos de promoção, uso muito também pra trocar por ingressos pro cinema."</p>
+                    </div>
+                    <div class="col-md-4">
+                      <h4 class="feed-title">Victor Medeiros - 25</h4>
+                      <p class="feed-text">"Faço compras online assiduamente, e a possibilidade de ser bonificado nessas transações me estimulam a continuar adquirindo os produtos que desejo. Consigo conciliar os descontos oferecidos pelo programa e os bônus em novas compras.
+                        Em minha última compra obtive desconto de 15% nos livros que queria, além de poder comprar outros itens pagando parte do valor com os bônus que consegui durante a compra. Considero esses programas de bonificação uma forma segura,
+                        eficiente e acertiva de fidelizar o cliente"</p>
+                      </div>
+                    </div>
+                  </footer>
+                </body>
+                </html>
