@@ -150,9 +150,12 @@ p{
 }
 
 .logo_centro {
-    width: 500px;
-    height: 600px;
-    align-self: center;
+    width: 70%;
+    height: auto;
+    display: block;
+    position: relative;
+    padding: inherit;
+    left: 10%
 }
 
 .logo {
@@ -193,10 +196,12 @@ p{
 }
 
 .sobre-texto {
-    margin: 20px;
+    margin: auto;
+    padding-top: 20px;
     text-align: center;
 }
 
+<<<<<<< HEAD
 .titulo_postagem{
     position:   relative;
 }
@@ -208,4 +213,31 @@ p{
 }
 .texto_postagem{
     text-align: justify;
+=======
+.postagens-alinhamento {
+    text-align: left;
+}
+
+.titulo_postagem{
+    position: relative;
+    padding-left: 40px;
+}
+
+.postagens-subtitulo {
+    font-style: italic;
+    padding-top: 20px;
+    padding-left: 40px;
+}
+
+.postagens-texto {
+    padding: 40px;
+    line-height: inherit;
+    max-width: 700px;
+}
+
+#fonte_quadro {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    color: #0000;
+>>>>>>> origin/master
 }
