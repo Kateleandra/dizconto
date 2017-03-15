@@ -125,145 +125,145 @@
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus vero excepturi, a eius deserunt impedit. Vero accusantium dicta reprehenderit facilis similique aliquam amet! Iure atque incidunt quaerat, qui delectus dolorum.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint mollitia optio quos commodi nam sunt in, animi sed nobis. Cupiditate quidem reprehenderit soluta facilis, veniam tempora illum error velit? Ipsam.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil dicta sunt eligendi neque! Impedit cumque nisi, itaque quis expedita, ipsum, obcaecati accusamus sapiente, repudiandae repellat sed? Dolorum voluptate unde nobis.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga modi doloribus eligendi, commodi magnam fugit excepturi dolores iusto, reiciendis maxime corporis cum aperiam incidunt eum debitis ducimus recusandae soluta qui?</p>
             </div>
 
+            <hr>
+
             <!-- Scripts-->
-<script>
-    $("#leadFormB2C").submit(function(event) {
-        event.preventDefault();
+    <script>
+        $("#leadFormB2C").submit(function(event) {
+            event.preventDefault();
 
-        var $form = $(this);
+            var $form = $(this);
 
-        var lead = {
-            "nome": $("#nome").val(),
-            "email": $("#email").val(),
-            "tipo": "b2c"
-        };
-        var url = "/app/lead/"
-        var posting = $.post(url, lead);
-    });
-</script>
-<script>
-    $("#leadFormB2B").submit(function(event) {
-        event.preventDefault();
+            var lead = {
+                "nome": $("#nome").val(),
+                "email": $("#email").val(),
+                "tipo": "b2c"
+            };
+            var url = "/app/lead/"
+            var posting = $.post(url, lead);
+        });
+    </script>
+    <script>
+        $("#leadFormB2B").submit(function(event) {
+            event.preventDefault();
 
-        var $form = $(this);
+            var $form = $(this);
 
-        var lead = {
-            "nome": $("#nome").val(),
-            "email": $("#email").val(),
-            "tipo": "b2b"
-        };
-        var url = "/app/lead/"
-        var posting = $.post(url, lead);
-    });
-</script>
-<script>
-    $("#leadForm").submit(function(event) {
-        event.preventDefault();
+            var lead = {
+                "nome": $("#nome").val(),
+                "email": $("#email").val(),
+                "tipo": "b2b"
+            };
+            var url = "/app/lead/"
+            var posting = $.post(url, lead);
+        });
+    </script>
+    <script>
+        $("#leadForm").submit(function(event) {
+            event.preventDefault();
 
-        var $form = $(this);
+            var $form = $(this);
 
-        var lead = {
-            "nome": $("#nome").val(),
-            "email": $("#email").val(),
-            "tipo": "b2c"
-        };
-        var url = "/app/lead/"
-        var posting = $.post(url, lead);
-    });
-</script>
+            var lead = {
+                "nome": $("#nome").val(),
+                "email": $("#email").val(),
+                "tipo": "b2c"
+            };
+            var url = "/app/lead/"
+            var posting = $.post(url, lead);
+        });
+    </script>
 
-        <div class="col-md-4 quandro_canto">
-            <div class="quandro_canto">
+            <div class="col-md-4 quadro_canto">
                 <div>
                     <div class="col-md-12">
-                        <img class="img-responsive" src="img/logo_centro.png" alt="">
-                        <p class="fonte_quadro" style="color: #0000;">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex cumque impedit deserunt nostrum iusto tempore alias placeat assumenda animi numquam perferendis, magnam similique, sequi sunt atque, aliquam tempora nesciunt voluptates.</p>
+                        <img class="img-responsive" src="img/logo_centro.png" alt="logo_centro">
+
+                        <p id="fonte_quadro">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex cumque impedit deserunt nostrum iusto tempore alias placeat assumenda animi numquam perferendis, magnam similique, sequi sunt atque, aliquam tempora nesciunt voluptates.</p>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <hr>
-<!-- Scripts-->
-<script>
-    $("#leadFormB2C").submit(function(event) {
-        event.preventDefault();
+            <hr>
+    <!-- Scripts-->
+    <script>
+        $("#leadFormB2C").submit(function(event) {
+            event.preventDefault();
 
-        var $form = $(this);
+            var $form = $(this);
 
-        var lead = {
-            "nome": $("#nome").val(),
-            "email": $("#email").val(),
-            "tipo": "b2c"
-        };
-        var url = "/app/lead/"
-        var posting = $.post(url, lead);
-    });
-</script>
-<script>
-    $("#leadFormB2B").submit(function(event) {
-        event.preventDefault();
+            var lead = {
+                "nome": $("#nome").val(),
+                "email": $("#email").val(),
+                "tipo": "b2c"
+            };
+            var url = "/app/lead/"
+            var posting = $.post(url, lead);
+        });
+    </script>
+    <script>
+        $("#leadFormB2B").submit(function(event) {
+            event.preventDefault();
 
-        var $form = $(this);
+            var $form = $(this);
 
-        var lead = {
-            "nome": $("#nome").val(),
-            "email": $("#email").val(),
-            "tipo": "b2b"
-        };
-        var url = "/app/lead/"
-        var posting = $.post(url, lead);
-    });
-</script>
-<script>
-    $("#leadForm").submit(function(event) {
-        event.preventDefault();
+            var lead = {
+                "nome": $("#nome").val(),
+                "email": $("#email").val(),
+                "tipo": "b2b"
+            };
+            var url = "/app/lead/"
+            var posting = $.post(url, lead);
+        });
+    </script>
+    <script>
+        $("#leadForm").submit(function(event) {
+            event.preventDefault();
 
-        var $form = $(this);
+            var $form = $(this);
 
-        var lead = {
-            "nome": $("#nome").val(),
-            "email": $("#email").val(),
-            "tipo": "b2c"
-        };
-        var url = "/app/lead/"
-        var posting = $.post(url, lead);
-    });
-</script>
-
-
-<footer>
-    <form class="se-liga" action="/" id="leadForm">
-        <div>
-            <div class="col-md-12">
-                <h1 class="chamada-newsletter">SE LIGA</h1>
-                <h5 class="chamada-newsletter">ASSINE NOSSA NEWSLETTER</h5>
-                <p class="texto-se-liga">Não fica dando bobeira! Cadastre-se que a gente te envia os melhores descontos da internet!</p>
-                <div class="text-center">
-                    <div>
-                        <input type="text" name="nome" id="nome" size="40" placeholder="Nome Completo" /></p>
-                        <input type="text" name="email" id="email" size="40" placeholder="E-mail" /></p>
-                    </div>
-                    <div>
-                        <button class="botao-cadastro" type="submit">PRONTO!</button>
+            var lead = {
+                "nome": $("#nome").val(),
+                "email": $("#email").val(),
+                "tipo": "b2c"
+            };
+            var url = "/app/lead/"
+            var posting = $.post(url, lead);
+        });
+    </script>
+    <footer>
+        <form class="se-liga" action="/" id="leadForm">
+            <div>
+                <div class="col-md-12">
+                    <h1 class="chamada-newsletter">SE LIGA</h1>
+                    <h5 class="chamada-newsletter">ASSINE NOSSA NEWSLETTER</h5>
+                    <p class="texto-se-liga">Não fica dando bobeira! Cadastre-se que a gente te envia os melhores descontos da internet!</p>
+                    <div class="text-center">
+                        <div>
+                            <input type="text" name="nome" id="nome" size="40" placeholder="Nome Completo" /></p>
+                            <input type="text" name="email" id="email" size="40" placeholder="E-mail" /></p>
+                        </div>
+                        <div>
+                            <button class="botao-cadastro" type="submit">PRONTO!</button>
+                        </div>
                     </div>
                 </div>
             </div>
+        </form>
+        <div class="feed-rodape">
+            <div class="col-md-4">
+                <h4 class="feed-title">Leonardo Oliveira - 21</h4>
+                <p class="feed-text">"Utilizar um sistema de cashback foi ótimo. Várias das lojas parceiras eram lojas nas quais eu já realizava compras, então ganhar um pouco do dinheiro de volta é sempre bom. Além disso, consegui alguns cupons de descontos muito bons, principalmente na compra de livros. É um sistema que vale a pena."</p>
+            </div>
+            <div class="col-md-4">
+                <h4 class="feed-title">Leonardo Oliveira - 21</h4>
+                <p class="feed-text">"Utilizar um sistema de cashback foi ótimo. Várias das lojas parceiras eram lojas nas quais eu já realizava compras, então ganhar um pouco do dinheiro de volta é sempre bom. Além disso, consegui alguns cupons de descontos muito bons, principalmente na compra de livros. É um sistema que vale a pena."</p>
+            </div>
+            <div class="col-md-4">
+                <h4 class="feed-title">Leonardo Oliveira - 21</h4>
+                <p class="feed-text">"Utilizar um sistema de cashback foi ótimo. Várias das lojas parceiras eram lojas nas quais eu já realizava compras, então ganhar um pouco do dinheiro de volta é sempre bom. Além disso, consegui alguns cupons de descontos muito bons, principalmente na compra de livros. É um sistema que vale a pena."</p>
+            </div>
         </div>
-    </form>
-    <div class="feed-rodape">
-        <div class="col-md-4">
-            <h4 class="feed-title">Leonardo Oliveira - 21</h4>
-            <p class="feed-text">"Utilizar um sistema de cashback foi ótimo. Várias das lojas parceiras eram lojas nas quais eu já realizava compras, então ganhar um pouco do dinheiro de volta é sempre bom. Além disso, consegui alguns cupons de descontos muito bons, principalmente na compra de livros. É um sistema que vale a pena."</p>
-        </div>
-        <div class="col-md-4">
-            <h4 class="feed-title">Leonardo Oliveira - 21</h4>
-            <p class="feed-text">"Utilizar um sistema de cashback foi ótimo. Várias das lojas parceiras eram lojas nas quais eu já realizava compras, então ganhar um pouco do dinheiro de volta é sempre bom. Além disso, consegui alguns cupons de descontos muito bons, principalmente na compra de livros. É um sistema que vale a pena."</p>
-        </div>
-        <div class="col-md-4">
-            <h4 class="feed-title">Leonardo Oliveira - 21</h4>
-            <p class="feed-text">"Utilizar um sistema de cashback foi ótimo. Várias das lojas parceiras eram lojas nas quais eu já realizava compras, então ganhar um pouco do dinheiro de volta é sempre bom. Além disso, consegui alguns cupons de descontos muito bons, principalmente na compra de livros. É um sistema que vale a pena."</p>
-        </div>
-    </div>
-</footer>
-</body>
+    </footer>
+    </body>
 </html>

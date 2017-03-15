@@ -178,14 +178,14 @@ div ul li {
     background-color: #282727;
     padding-bottom: 40px;
 }
-.quandro_canto{
+.quadro_canto{
     background-color: #282727;
     padding-top: 10px;
     padding-bottom: 10px;
     display: flex;
     float: right;
 }
-.fonte_quando{
+#fonte_quadro{
     padding-top: 15px;
     padding-bottom: 15px;
     color: #0000;
