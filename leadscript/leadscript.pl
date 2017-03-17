@@ -7,6 +7,8 @@ use Parse::AccessLog;
 use Data::Dumper;
 use MongoDB;
 use Encode qw(decode encode);
+use String::Util qw(trim);
+ use String::CamelCase qw(camelize);
 
 my %hash_ip;
 
@@ -74,15 +76,15 @@ my @filtered;
 
 for my $line (values %result) {
   if (index(lc($line->{email}), "test") == -1 && $line->{name} ne "" && index(lc($line->{name}), "test") == -1) {
-    $line->{email} = lc $line->{email};
+    $line->{email} = trim lc $line->{email};
     $line->{type} = uc $line->{type};
+    $line->{name} = trim camelize lc $line->{name};
 
     push @filtered, $line;
   } else {
     print "Ignorando Teste: $line->{email} $line->{name}\n";
   }
 }
-
 
 my @sorted = sort { $a->{day}.$a->{time} cmp $b->{day}.$b->{time} } @filtered;
 
