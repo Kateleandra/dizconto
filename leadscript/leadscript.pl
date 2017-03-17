@@ -33,10 +33,18 @@ my $leads = $collection->find;
 
 my %result;
 
+
 while ( my $doc = $leads->next ) {
     my $time = substr( $doc->{'createdAt'}, 11, 8 );
     my $day = substr($doc->{'createdAt'},8,2);
     my $name = encode('utf8', $doc->{'nome'});
+    my $email = $doc->{'email'};
+    my $type = $doc->{'tipo'};
+
+    if ($type eq 'b2b')  {
+      print "B2B: $name $email \n";
+    }
+
     if ( exists $hash_ip{($time, $day)} ) {
         my $ip = $hash_ip{($time, $day)};
 
@@ -45,7 +53,8 @@ while ( my $doc = $leads->next ) {
           time => $time,
           ip => $ip,
           name => $name,
-          email => $doc->{'email'});
+          email => $email,
+          type => $type);
 
           $result{$name} = \%lead;
         } else
@@ -54,15 +63,20 @@ while ( my $doc = $leads->next ) {
         }
     }
     else {
-        #print " Não existe na hash de IPs o lead $name !!\n";
+        print " Não existe na hash de IPs o lead $name !!\n";
     }
 
 }
 
+my $x = scalar (values %result);
+print "Total: $x \n";
 my @filtered;
 
 for my $line (values %result) {
   if (index(lc($line->{email}), "test") == -1 && $line->{name} ne "" && index(lc($line->{name}), "test") == -1) {
+    $line->{email} = lc $line->{email};
+    $line->{type} = uc $line->{type};
+
     push @filtered, $line;
   } else {
     print "Ignorando Teste: $line->{email} $line->{name}\n";
@@ -74,10 +88,10 @@ my @sorted = sort { $a->{day}.$a->{time} cmp $b->{day}.$b->{time} } @filtered;
 
 print "\n\n";
 
+print "email,nome,ip,tipo,data_hora\n";
 for my $line (values @sorted) {
-    #my $line = "Dia $line->{day} $line->{time} IP: $line->{ip}, $line->{email}, $line->{name}";
-    my $line = "$line->{time} $line->{email} - $line->{name}";
-    print $line."\n";
+    print "$line->{email},$line->{name},$line->{ip},$line->{type},$line->{day} $line->{time}\n";
+    #my $line = "$line->{time} $line->{email} - $line->{name}";
 }
 
 print "Total $#filtered leads válidos\n";
