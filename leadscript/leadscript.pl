@@ -11,6 +11,14 @@ use Encode qw(decode encode);
 use String::Util qw(trim);
 use String::CamelCase qw(camelize);
 use DateTime::Format::DateParse;
+use Time::Zone;
+
+sub data_utc_brz {
+  my $dt = shift;
+  $dt = $dt->add( hours => -3 );
+
+  return $dt;
+}
 
 my %hash_ip;
 
@@ -29,6 +37,7 @@ for my $rec (@recs) {
     my $day = substr($hash{"time_local"}, 0, 2);
     my $ip   = $hash{"remote_addr"};
     my $dt = DateTime::Format::DateParse->parse_datetime( $hash{"time_local"} );
+    $dt = data_utc_brz $dt;
     my $formatted_date_time = $dt->ymd . " " . $dt->hms;
     my %pair = (ip => $ip, formatted_date_time => $formatted_date_time);
     $hash_ip{($time, $day)} = \%pair;
