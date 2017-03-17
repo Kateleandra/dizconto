@@ -30,8 +30,8 @@ for my $rec (@recs) {
     my $ip   = $hash{"remote_addr"};
     my $dt = DateTime::Format::DateParse->parse_datetime( $hash{"time_local"} );
     my $formatted_date_time = $dt->ymd . " " . $dt->hms;
-    print $formatted_date_time . "\n";
-    $hash_ip{($time, $day)} = $ip;
+    my %pair = (ip => $ip, formatted_date_time => $formatted_date_time);
+    $hash_ip{($time, $day)} = \%pair;
 }
 
 my $client = MongoDB->connect('mongodb://localhost');
@@ -53,7 +53,9 @@ while ( my $doc = $leads->next ) {
     }
 
     if ( exists $hash_ip{($time, $day)} ) {
-        my $ip = $hash_ip{($time, $day)};
+        my %data = %{$hash_ip{($time, $day)}};
+        my $ip = $data{ip};
+        my $formatted_date_time = $data{formatted_date_time};
 
         if (! exists $result{$name}) {
           my %lead = (day => $day,
@@ -61,7 +63,8 @@ while ( my $doc = $leads->next ) {
           ip => $ip,
           name => $name,
           email => $email,
-          type => $type);
+          type => $type,
+          formatted_date_time => $formatted_date_time);
 
           $result{$name} = \%lead;
         } else
@@ -97,7 +100,7 @@ print "\n\n";
 
 print "email,nome,ip,tipo,data_hora\n";
 for my $line (values @sorted) {
-    print "$line->{email},$line->{name},$line->{ip},$line->{type},$line->{day} $line->{time}\n";
+    print "$line->{email},$line->{name},$line->{ip},$line->{type},$line->{formatted_date_time}\n";
     #my $line = "$line->{time} $line->{email} - $line->{name}";
 }
 
