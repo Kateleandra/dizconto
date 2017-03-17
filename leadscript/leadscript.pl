@@ -1,3 +1,4 @@
+
 #!/usr/bin/perl
 
 use strict;
@@ -8,7 +9,8 @@ use Data::Dumper;
 use MongoDB;
 use Encode qw(decode encode);
 use String::Util qw(trim);
- use String::CamelCase qw(camelize);
+use String::CamelCase qw(camelize);
+use DateTime::Format::DateParse;
 
 my %hash_ip;
 
@@ -26,6 +28,9 @@ for my $rec (@recs) {
     my $time = substr( $hash{"time_local"}, 12, 8 );
     my $day = substr($hash{"time_local"}, 0, 2);
     my $ip   = $hash{"remote_addr"};
+    my $dt = DateTime::Format::DateParse->parse_datetime( $hash{"time_local"} );
+    my $formatted_date_time = $dt->ymd . " " . $dt->hms;
+    print $formatted_date_time . "\n";
     $hash_ip{($time, $day)} = $ip;
 }
 
