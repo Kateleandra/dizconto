@@ -1,4 +1,3 @@
-
 #!/usr/bin/perl
 
 use strict;
@@ -14,13 +13,118 @@ use DateTime::Format::DateParse;
 use Time::Zone;
 
 sub data_utc_brz {
-  my $dt = shift;
-  $dt = $dt->add( hours => -3 );
+    my $dt = shift;
+    $dt = $dt->add( hours => -3 );
 
-  return $dt;
+    return $dt;
 }
 
-my %hash_ip;
+sub get_hash_ip {
+    my $file = shift;
+    my %hash_ip;
+
+    my $p    = Parse::AccessLog->new;
+    my @logs = $p->parse($file);
+
+    for my $log (@logs) {
+        my $time = substr( $log->{"time_local"}, 12, 8 );
+        my $day  = substr( $log->{"time_local"}, 0,  2 );
+
+        my $dt =
+          DateTime::Format::DateParse->parse_datetime( $log->{"time_local"} );
+        $dt = data_utc_brz $dt;
+
+        my %pair = (
+            ip                  => $log->{"remote_addr"},
+            formatted_date_time => $dt->ymd . " " . $dt->hms
+        );
+        $hash_ip{ ( $time, $day ) } = \%pair;
+    }
+
+    return \%hash_ip;
+}
+
+sub get_leads {
+    my $client = MongoDB->connect('mongodb://localhost');
+    my $collection = $client->ns('sails.lead');   # database foo, collection bar
+    my $leads      = $collection->find;
+
+    return $leads;
+}
+
+sub filter_lead {
+    my $hash_name_lead = shift;
+    my @filtered_leads;
+    for my $line ( values %{$hash_name_lead} ) {
+        if (   index( lc( $line->{email} ), "test" ) == -1
+            && $line->{name} ne ""
+            && index( lc( $line->{name} ), "test" ) == -1 )
+        {
+            $line->{email} = trim lc $line->{email};
+            $line->{type}  = uc $line->{type};
+            $line->{name}  = trim camelize lc $line->{name};
+
+            push @filtered_leads, $line;
+        }
+        else {
+            print "Ignorando Teste: $line->{email} $line->{name}\n";
+        }
+    }
+
+    return \@filtered_leads;
+}
+
+sub hash_name_lead {
+    my $leads   = shift;
+    my $hash_ip = shift;
+    my %hash_name_lead;
+    while ( my $doc = $leads->next ) {
+        my $time = substr( $doc->{'createdAt'}, 11, 8 );
+        my $day  = substr( $doc->{'createdAt'}, 8,  2 );
+        my $name  = encode( 'utf8', $doc->{'nome'} );
+        my $email = $doc->{'email'};
+        my $type  = $doc->{'tipo'};
+
+        if ( exists $hash_ip->{ ( $time, $day ) } ) {
+            my %data                = %{ $hash_ip->{ ( $time, $day ) } };
+            my $ip                  = $data{ip};
+            my $formatted_date_time = $data{formatted_date_time};
+
+            if ( !exists $hash_name_lead{$name} ) {
+                my %lead = (
+                    day                 => $day,
+                    time                => $time,
+                    ip                  => $ip,
+                    name                => $name,
+                    email               => $email,
+                    type                => $type,
+                    formatted_date_time => $formatted_date_time
+                );
+
+                $hash_name_lead{$name} = \%lead;
+            }
+            else {
+                print "Ignorando Lead repetido $name\n";
+            }
+        }
+        else {
+            print " Não existe IPs para o lead $name !!\n";
+        }
+
+    }
+
+    return \%hash_name_lead;
+}
+
+sub print_csv {
+    my $sorted = shift;
+
+    print "email,nome,ip,tipo,data_hora\n";
+    for my $line ( values @{$sorted} ) {
+        print
+"$line->{email},$line->{name},$line->{ip},$line->{type},$line->{formatted_date_time}\n";
+    }
+}
 
 my $num_args = scalar @ARGV;
 if ( $num_args != 1 ) {
@@ -28,89 +132,12 @@ if ( $num_args != 1 ) {
     exit;
 }
 
-my $p    = Parse::AccessLog->new;
-my @recs = $p->parse( $ARGV[0] );
+my %hash_ip        = %{ get_hash_ip( $ARGV[0] ) };
+my $leads          = get_leads;
+my $hash_name_lead = hash_name_lead $leads, \%hash_ip;
+my @filtered_leads = @{ filter_lead $hash_name_lead };
+my @sorted =
+  sort { $a->{day} . $a->{time} cmp $b->{day} . $b->{time} } @filtered_leads;
 
-for my $rec (@recs) {
-    my %hash = %{$rec};
-    my $time = substr( $hash{"time_local"}, 12, 8 );
-    my $day = substr($hash{"time_local"}, 0, 2);
-    my $ip   = $hash{"remote_addr"};
-    my $dt = DateTime::Format::DateParse->parse_datetime( $hash{"time_local"} );
-    $dt = data_utc_brz $dt;
-    my $formatted_date_time = $dt->ymd . " " . $dt->hms;
-    my %pair = (ip => $ip, formatted_date_time => $formatted_date_time);
-    $hash_ip{($time, $day)} = \%pair;
-}
-
-my $client = MongoDB->connect('mongodb://localhost');
-my $collection = $client->ns('sails.lead');    # database foo, collection bar
-my $leads = $collection->find;
-
-my %result;
-
-
-while ( my $doc = $leads->next ) {
-    my $time = substr( $doc->{'createdAt'}, 11, 8 );
-    my $day = substr($doc->{'createdAt'},8,2);
-    my $name = encode('utf8', $doc->{'nome'});
-    my $email = $doc->{'email'};
-    my $type = $doc->{'tipo'};
-
-    if ($type eq 'b2b')  {
-      print "B2B: $name $email \n";
-    }
-
-    if ( exists $hash_ip{($time, $day)} ) {
-        my %data = %{$hash_ip{($time, $day)}};
-        my $ip = $data{ip};
-        my $formatted_date_time = $data{formatted_date_time};
-
-        if (! exists $result{$name}) {
-          my %lead = (day => $day,
-          time => $time,
-          ip => $ip,
-          name => $name,
-          email => $email,
-          type => $type,
-          formatted_date_time => $formatted_date_time);
-
-          $result{$name} = \%lead;
-        } else
-        {
-          print "Ignorando Lead repetido $name\n";
-        }
-    }
-    else {
-        print " Não existe na hash de IPs o lead $name !!\n";
-    }
-
-}
-
-my $x = scalar (values %result);
-print "Total: $x \n";
-my @filtered;
-
-for my $line (values %result) {
-  if (index(lc($line->{email}), "test") == -1 && $line->{name} ne "" && index(lc($line->{name}), "test") == -1) {
-    $line->{email} = trim lc $line->{email};
-    $line->{type} = uc $line->{type};
-    $line->{name} = trim camelize lc $line->{name};
-
-    push @filtered, $line;
-  } else {
-    print "Ignorando Teste: $line->{email} $line->{name}\n";
-  }
-}
-
-my @sorted = sort { $a->{day}.$a->{time} cmp $b->{day}.$b->{time} } @filtered;
-
-print "\n\n";
-
-print "email,nome,ip,tipo,data_hora\n";
-for my $line (values @sorted) {
-    print "$line->{email},$line->{name},$line->{ip},$line->{type},$line->{formatted_date_time}\n";
-    #my $line = "$line->{time} $line->{email} - $line->{name}";
-}
-
-print "Total $#filtered leads válidos\n";
+print_csv \@sorted;
+print "Total $#filtered_leads leads válidos\n";
