@@ -20,6 +20,19 @@ sub data_utc_brz {
   return $dt;
 }
 
+sub data_add_second {
+  my $dt = shift;
+  my $seconds = shift;
+
+  if ($seconds > 0) {
+    $dt = $dt->add( seconds => $seconds );
+  } else {
+    $dt = $dt->subtract( seconds => $seconds );
+  }
+
+  return $dt;
+}
+
 my %hash_ip;
 
 my $num_args = scalar @ARGV;
@@ -37,10 +50,17 @@ for my $rec (@recs) {
     my $day = substr($hash{"time_local"}, 0, 2);
     my $ip   = $hash{"remote_addr"};
     my $dt = DateTime::Format::DateParse->parse_datetime( $hash{"time_local"} );
+    $dt->subtract( seconds => 1 );
+    my $before = $dt->hms;
+    $dt->add( seconds => 2);
+    my $next = $dt->hms;
+
     $dt = data_utc_brz $dt;
     my $formatted_date_time = $dt->ymd . " " . $dt->hms;
     my %pair = (ip => $ip, formatted_date_time => $formatted_date_time);
     $hash_ip{($time, $day)} = \%pair;
+    $hash_ip{($next, $day)} = \%pair;
+    $hash_ip{($before, $day)} = \%pair;
 }
 
 my $client = MongoDB->connect('mongodb://localhost');
