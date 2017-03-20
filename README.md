@@ -1,3 +1,4 @@
-# Fontend
+## Dizconto
 
-Frontend do blog dizconto usando [Bootstrap](http://getbootstrap.com/).
+ * Protótipo de blog que pode ser visto em [http://dizconto.com.br](http://dizconto.com.br)
+
