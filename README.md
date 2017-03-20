@@ -1,3 +1,3 @@
-# Dizconto
+# Fontend
 
-Repositório do blog dizconto https://www.dizconto.com.br
+Frontend do blog dizconto usando [Bootstrap](http://getbootstrap.com/).
